@@ -1,9 +1,11 @@
 import { Gender, Person } from "../Person";
 
-export enum StaffCategory {
-  DOCTOR='DOCTOR',
-  NURSE='NURSE',
-  SECRETARY='SECRETARY',
+export enum Role {
+  CHEIF='CHEIF',
+  WAITER='WAITER',
+  SECURITY='SECURITY',
+  MANAGER='MANAGER',
+  ACCOUNTANT='ACCOUNTANT',
 }
 
 /**
@@ -15,17 +17,12 @@ export class Staff extends Person {
   constructor(
     name: string,
     age: number,
-    protected category: StaffCategory,
+    protected category: Role,
     gender: Gender
   ) {
     super(name, age, gender);
   }
 
-  setSalary(salary: number) {
-    this.salary = salary;
-  }
+ 
 
-  getSalary() {
-    return this.salary;
-  }
 }
