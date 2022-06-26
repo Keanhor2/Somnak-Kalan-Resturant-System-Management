@@ -1,6 +1,7 @@
-import { CalendarManager } from "./calendar/Calendar";
+
 import { RoomsManager } from "./rooms/RoomsManager";
 import { HumanManager } from "./human/HumanManager";
+import { CalendarManager } from "./calendar/CalendarManager";
 
 export class Resturant {
   // Restaurant attributes
