@@ -2,8 +2,8 @@ import { CalendarManager } from "./calendar/Calendar";
 import { RoomsManager } from "./rooms/RoomsManager";
 import { HumanManager } from "./human/HumanManager";
 
-export class Hospital {
-  // Hospital attributes
+export class Resturant {
+  // Restaurant attributes
   private address?: string;
   private name: string;
   // public services
