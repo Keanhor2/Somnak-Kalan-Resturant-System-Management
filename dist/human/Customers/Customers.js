@@ -27,6 +27,9 @@ var Customer = /** @class */ (function (_super) {
     Customer.prototype.isTheName = function () {
         return this.name;
     };
+    Customer.prototype.getCustomer = function () {
+        return this.name;
+    };
     return Customer;
 }(Person_1.Person));
 exports.Customer = Customer;

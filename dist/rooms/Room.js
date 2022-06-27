@@ -27,6 +27,9 @@ var Room = /** @class */ (function () {
     Room.prototype.getRoomId = function () {
         return this.id;
     };
+    Room.prototype.isFreeRoom = function () {
+        return this.customers.length;
+    };
     return Room;
 }());
 exports.Room = Room;

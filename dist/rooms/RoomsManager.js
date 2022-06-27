@@ -24,6 +24,36 @@ var RoomsManager = /** @class */ (function () {
             }
         }
     };
+    RoomsManager.prototype.checkAllRoomFreeChair = function () {
+        var roomId = [];
+        for (var _i = 0, _a = this.rooms; _i < _a.length; _i++) {
+            var room = _a[_i];
+            if (room.isFreeRoom() !== 0) {
+                for (var _b = 0, _c = room['chairs']; _b < _c.length; _b++) {
+                    var chair = _c[_b];
+                    if (!chair.getCustomerInChair()) {
+                        roomId.push(room['id']);
+                    }
+                }
+            }
+        }
+        return roomId;
+    };
+    RoomsManager.prototype.checkFreeChair = function () {
+        var chairs = [];
+        for (var _i = 0, _a = this.rooms; _i < _a.length; _i++) {
+            var room = _a[_i];
+            if (room.isFreeRoom() !== 0) {
+                for (var _b = 0, _c = room['chairs']; _b < _c.length; _b++) {
+                    var chair = _c[_b];
+                    if (!chair.getCustomerInChair()) {
+                        chairs.push(chair);
+                    }
+                }
+            }
+        }
+        return chairs;
+    };
     return RoomsManager;
 }());
 exports.RoomsManager = RoomsManager;
