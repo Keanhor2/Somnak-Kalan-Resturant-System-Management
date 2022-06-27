@@ -1,8 +1,22 @@
+import { Room } from "../rooms/Room";
 import { Book } from "./Book";
+import { roomID } from "./CustomerBook";
 
-export class CalendarManager {
+export class CalendarManagers {
   public books: Book[] = [];
-  addEvent(book: Book) {
-    this.books.push(book);
+  addBook(...allBook:Book[]){
+    this.books= this.books.concat(allBook);
   }
+  addBookCheck(book: Book) {
+    for(let bookId of this.books) {
+      if(book[roomID.roomID].getRoomId()!==bookId[roomID.roomID].getRoomId()) {
+        this.books.push(book);
+        return bookId[roomID.roomID];
+      };
+      return 'This room has been Order'
+    }
   }
+  getBook(){
+    return this.books
+  }
+}

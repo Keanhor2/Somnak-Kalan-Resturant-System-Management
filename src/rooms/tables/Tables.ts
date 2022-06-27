@@ -1,7 +1,13 @@
-import { Chars } from "./Chairs";
+
 import { Menu } from "../Orders/Menu";
+import { Chair } from "./Chairs";
 
 export class Tables {
- private chair:Chars[] = [];
- private menu:Menu;
+ private menus: Menu;
+ addMenuToTable(menu:Menu){
+    this.menus = menu
+ }
+ getTable(){
+   return this.menus
+ }
 }

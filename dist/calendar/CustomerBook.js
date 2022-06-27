@@ -15,15 +15,19 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.DoctorAppointment = void 0;
+exports.CustomerBook = exports.roomID = void 0;
 var Book_1 = require("./Book");
-var DoctorAppointment = /** @class */ (function (_super) {
-    __extends(DoctorAppointment, _super);
-    function DoctorAppointment(category, start, end, customer) {
-        var _this = _super.call(this, category, start, end) || this;
+var roomID;
+(function (roomID) {
+    roomID["roomID"] = "roomID";
+})(roomID = exports.roomID || (exports.roomID = {}));
+var CustomerBook = /** @class */ (function (_super) {
+    __extends(CustomerBook, _super);
+    function CustomerBook(category, start, end, roomID, customer) {
+        var _this = _super.call(this, category, start, end, roomID) || this;
         _this.customer = customer;
         return _this;
     }
-    return DoctorAppointment;
+    return CustomerBook;
 }(Book_1.Book));
-exports.DoctorAppointment = DoctorAppointment;
+exports.CustomerBook = CustomerBook;

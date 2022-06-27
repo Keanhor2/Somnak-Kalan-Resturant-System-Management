@@ -1,10 +1,17 @@
 "use strict";
 exports.__esModule = true;
-exports.Chars = void 0;
-var Chars = /** @class */ (function () {
-    function Chars(chair) {
+exports.Chair = void 0;
+var Chair = /** @class */ (function () {
+    function Chair(chair, customer) {
         this.chair = chair;
+        this.customer = customer;
     }
-    return Chars;
+    Chair.prototype.gitChair = function () {
+        return this.chair;
+    };
+    Chair.prototype.getCustomerInChair = function () {
+        return this.customer;
+    };
+    return Chair;
 }());
-exports.Chars = Chars;
+exports.Chair = Chair;

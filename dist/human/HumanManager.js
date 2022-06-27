@@ -6,25 +6,16 @@ var HumanManager = /** @class */ (function () {
         this.customers = [];
         this.staff = [];
     }
-    /**
-     * add new customers
-     */
     HumanManager.prototype.addCustomer = function () {
-        var newCustomer = [];
+        var customer = [];
         for (var _i = 0; _i < arguments.length; _i++) {
-            newCustomer[_i] = arguments[_i];
+            customer[_i] = arguments[_i];
         }
-        this.customers = this.customers.concat(newCustomer);
+        this.customers = this.customers.concat(customer);
     };
-    /**
-     * get all customers
-     */
     HumanManager.prototype.getCustomer = function () {
         return this.customers;
     };
-    /**
-     * add new staffs
-     */
     HumanManager.prototype.addStaff = function () {
         var newStaff = [];
         for (var _i = 0; _i < arguments.length; _i++) {
@@ -32,11 +23,11 @@ var HumanManager = /** @class */ (function () {
         }
         this.staff = this.staff.concat(newStaff);
     };
-    /**
-     * Get all staffs
-     */
     HumanManager.prototype.getStaff = function () {
         return this.staff;
+    };
+    HumanManager.prototype.countAllStaffInRestaurants = function () {
+        return this.staff.length;
     };
     return HumanManager;
 }());

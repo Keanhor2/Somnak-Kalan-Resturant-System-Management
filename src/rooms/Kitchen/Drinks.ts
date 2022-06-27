@@ -1,5 +1,5 @@
 import { DrinkCategory } from "./EnumDrink";
 
 export class Drinks{
-    constructor(private name:DrinkCategory) {}
+    constructor(private drinkId:number,private name:DrinkCategory,private price:number) {}
 }

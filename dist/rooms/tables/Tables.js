@@ -3,8 +3,13 @@ exports.__esModule = true;
 exports.Tables = void 0;
 var Tables = /** @class */ (function () {
     function Tables() {
-        this.chair = [];
     }
+    Tables.prototype.addMenuToTable = function (menu) {
+        this.menus = menu;
+    };
+    Tables.prototype.getTable = function () {
+        return this.menus;
+    };
     return Tables;
 }());
 exports.Tables = Tables;

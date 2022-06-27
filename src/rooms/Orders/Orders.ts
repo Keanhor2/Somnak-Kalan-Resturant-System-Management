@@ -4,4 +4,8 @@ import { MenuItem } from "./MenuItem";
 export  class Orders{
     private waiter:Waiter;
     private menuItems: MenuItem[] = [];
+
+    getCustomerOrder(){
+        
+    }
 }

@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+<<<<<<< HEAD
 exports.Resturant = void 0;
 var RoomsManager_1 = require("./rooms/RoomsManager");
 var HumanManager_1 = require("./human/HumanManager");
@@ -8,11 +9,21 @@ var Resturant = /** @class */ (function () {
     function Resturant(name, address) {
         // public services
         this.calendar = new CalendarManager_1.CalendarManager();
+=======
+exports.Restaurant = void 0;
+var RoomsManager_1 = require("./rooms/RoomsManager");
+var HumanManager_1 = require("./human/HumanManager");
+var CalendarManager_1 = require("./calendar/CalendarManager");
+var Restaurant = /** @class */ (function () {
+    function Restaurant(name, address) {
+        // public services
+        this.calendar = new CalendarManager_1.CalendarManagers();
+>>>>>>> 4c8782a4b4d30fca48974c3f15db90c7675fe06c
         this.rooms = new RoomsManager_1.RoomsManager();
         this.hr = new HumanManager_1.HumanManager();
         this.name = name;
         this.address = address;
     }
-    return Resturant;
+    return Restaurant;
 }());
-exports.Resturant = Resturant;
+exports.Restaurant = Restaurant;
