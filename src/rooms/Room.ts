@@ -20,5 +20,8 @@ export class Room {
   getRoomId():number{
     return this.id;
   }
+  isFreeRoom(){
+    return this.customers.length
+  }
  
 }

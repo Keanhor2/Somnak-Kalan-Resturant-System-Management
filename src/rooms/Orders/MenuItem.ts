@@ -1,10 +1,13 @@
-export class MenuItem {
-    constructor(
-        private menuId: number,
-        private title: string,
-        private description: string,
-        private price: number
-    ) {
+import { Drinks } from "../Kitchen/Drinks";
+import { Foods } from "../Kitchen/Food";
 
+export class MenuItem {
+    private foods:Foods[] = [];
+    private drinks:Drinks[] = [];
+    addFood(...food:Foods[]){
+        this.foods = this.foods.concat(food);
+    }
+    addDrink(...drink:Drinks[]){
+        this.drinks = this.drinks.concat(drink);
     }
 }

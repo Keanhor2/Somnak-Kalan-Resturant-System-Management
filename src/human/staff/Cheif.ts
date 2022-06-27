@@ -4,7 +4,7 @@ import { Staff, Role } from "./Staff";
 /**
  * A nurse manage patient checks
  */
-export class Cheif extends Staff {
+export class Chef extends Staff {
   constructor(name: string, age: number,category: Role, gender: Gender,protected salary: number) {
     super(name, age,category, gender,salary);
   }

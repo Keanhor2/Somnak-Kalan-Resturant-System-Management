@@ -8,4 +8,7 @@ export class Customer extends Person {
   isTheName(){
     return this.name;
   }
+  getCustomer(){
+    return this.name;
+  }
 }

@@ -1,7 +1,10 @@
-import { Cheif } from "../../human/staff/Cheif";
+import { Chef } from "../../human/staff/Cheif";
 import { Foods } from "./Food";
 
-export abstract class Kitchen{
-    private chief:Cheif[] = [];
+export class Kitchen{
+    private chefs:Chef[] = [];
     private foods:Foods[] = [];
+    addChefToKitchen(...chef:Chef[]){
+        this.chefs = this.chefs.concat(chef);
+    }
 }
