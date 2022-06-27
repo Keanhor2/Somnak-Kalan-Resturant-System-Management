@@ -102,8 +102,12 @@ tables.addMenuToTable(menu)
 /* 
     add chef to kitchen 
 */
-let kitchen = new Kitchen()
-kitchen.addChefToKitchen(kea1,kea2,kea3);
+let kitchens = new Kitchen()
+kitchens.addChefToKitchen(kea1,kea2,kea3);
+/* 
+    add kitchen to restaurant
+*/
+restaurant.rooms.kitchen = kitchens;
 //MAIN MENU
 //list all room in restaurant;
 // console.log(restaurant.rooms.listRoomInRestart());
@@ -115,10 +119,6 @@ kitchen.addChefToKitchen(kea1,kea2,kea3);
 
 //check chair number that free
 // console.log(restaurant.rooms.checkFreeChair());
-
-
-
-
 
 
 //all in restaurant

@@ -5,7 +5,7 @@ export class RoomsManager {
   public rooms: Room[] = [];
   public kitchen: Kitchen;
   addRoom(room: Room) {
-    return this.rooms.push(room);
+    this.rooms.push(room);
   }
   listRoomInRestart() {
     let roomInRestaurant: Room[] = [];
