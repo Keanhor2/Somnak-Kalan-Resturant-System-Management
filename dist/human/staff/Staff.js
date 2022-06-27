@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.Staff = exports.Role = void 0;
+exports.Staff = exports.Salary = exports.Role = void 0;
 var Person_1 = require("../Person");
 var Role;
 (function (Role) {
@@ -25,6 +25,14 @@ var Role;
     Role["MANAGER"] = "MANAGER";
     Role["ACCOUNTANT"] = "ACCOUNTANT";
 })(Role = exports.Role || (exports.Role = {}));
+var Salary;
+(function (Salary) {
+    Salary[Salary["CHEIF_SALARY"] = 700] = "CHEIF_SALARY";
+    Salary[Salary["ACCOUNTANT_SALARY"] = 800] = "ACCOUNTANT_SALARY";
+    Salary[Salary["SECURITY_SALARY"] = 500] = "SECURITY_SALARY";
+    Salary[Salary["WAITER_SALARY"] = 300] = "WAITER_SALARY";
+    Salary[Salary["MANAGER_SALARY"] = 1000] = "MANAGER_SALARY";
+})(Salary = exports.Salary || (exports.Salary = {}));
 /**
  * A staff is a personn of the hospital with a salary
  */

@@ -1,5 +1,18 @@
 "use strict";
 exports.__esModule = true;
+<<<<<<< HEAD
+exports.CalendarManager = void 0;
+var CalendarManager = /** @class */ (function () {
+    function CalendarManager() {
+        this.books = [];
+    }
+    CalendarManager.prototype.addEvent = function (book) {
+        this.books.push(book);
+    };
+    return CalendarManager;
+}());
+exports.CalendarManager = CalendarManager;
+=======
 exports.CalendarManagers = void 0;
 var CustomerBook_1 = require("./CustomerBook");
 var CalendarManagers = /** @class */ (function () {
@@ -30,3 +43,4 @@ var CalendarManagers = /** @class */ (function () {
     return CalendarManagers;
 }());
 exports.CalendarManagers = CalendarManagers;
+>>>>>>> 4c8782a4b4d30fca48974c3f15db90c7675fe06c
