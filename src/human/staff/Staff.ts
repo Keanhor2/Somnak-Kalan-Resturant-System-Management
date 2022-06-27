@@ -12,13 +12,13 @@ export enum Role {
  * A staff is a personn of the hospital with a salary
  */
 export class Staff extends Person {
-  protected salary: number = 0; // by default
-
   constructor(
-    name: string,
-    age: number,
+    protected name: string,
+    protected age: number,
     protected category: Role,
-    gender: Gender
+    protected gender: Gender,
+    protected salary: number,
+    protected phone?: string
   ) {
     super(name, age, gender);
   }

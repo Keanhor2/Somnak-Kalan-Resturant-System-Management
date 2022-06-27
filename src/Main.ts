@@ -3,6 +3,12 @@ import { CustomerBook } from "./calendar/CustomerBook";
 import { DateTimes } from "./calendar/DateTime";
 import { Customer } from "./human/Customers/Customers";
 import { Gender } from "./human/Person";
+import { Accountant } from "./human/staff/Accountant";
+import { Cheif } from "./human/staff/Cheif";
+import { Manager } from "./human/staff/Manager";
+import { Security } from "./human/staff/Security";
+import { Role } from "./human/staff/Staff";
+import { Waiter } from "./human/staff/Waiter";
 import { Restaurant } from "./Rataurant";
 import { Room } from "./rooms/Room";
 import { Chair } from "./rooms/tables/Chairs";
@@ -30,10 +36,10 @@ let char4 = new Chair(4)
 let char5 = new Chair(5)
 room1.addChair(char1,char2,char3,char4,char5);
 // create customer and add to room and CustomerOrder room
-let kea = new Customer('kea',20, Gender.MALE);
-let somnak = new Customer('somnak',19, Gender.MALE);
-let cham = new Customer('cham',20, Gender.MALE);
-let narong = new Customer('narong',20, Gender.MALE);
+let kea = new Customer('kea',20, Gender.MALE,'123456');
+let somnak = new Customer('somnak',19, Gender.MALE,'345678');
+let cham = new Customer('cham',20, Gender.MALE,'55667');
+let narong = new Customer('narong',20, Gender.MALE,'246675');
 restaurant.hr.addCustomer(kea,somnak,cham,narong);
 //add customers to room
 room1.addCustomerToRoom(kea,somnak,narong,cham)
@@ -49,7 +55,18 @@ restaurant.calendar.addBook(bookTable);
 
 //MAIN MENU
 //list all room in restaurant;
-console.log(restaurant.rooms.listRoomInRestart());
+// console.log(restaurant.rooms.listRoomInRestart());
 //list room that user input id Room
-console.log(restaurant.rooms.findRoomByRoomId(room2));
+// console.log(restaurant.rooms.findRoomByRoomId(room2));
 
+
+// add staffs
+let somnak1 = new Manager('Somnak',12,Role.MANAGER,Gender.MALE,1000);
+let Theary = new Accountant('Theary',20,Role.ACCOUNTANT,Gender.FEMALE,600);
+let kea1 = new Cheif('Kea',20,Role.CHEIF,Gender.MALE,700);
+let vanda = new Security('Vanda',22,Role.SECURITY,Gender.MALE,300);
+let kana = new Waiter('Kana',20,Role.WAITER,Gender.FEMALE,250);
+let jock = new Waiter('Jock',20,Role.WAITER,Gender.MALE,250);
+restaurant.hr.addStaff(somnak1,Theary,kea1,vanda,kana,jock);
+//all in restaurant
+// console.log(restaurant.hr);

@@ -19,8 +19,8 @@ exports.Customer = void 0;
 var Person_1 = require("../Person");
 var Customer = /** @class */ (function (_super) {
     __extends(Customer, _super);
-    function Customer(name, age, gender) {
-        var _this = _super.call(this, name, age, gender) || this;
+    function Customer(name, age, gender, phone) {
+        var _this = _super.call(this, name, age, gender, phone) || this;
         _this.orderId = [];
         return _this;
     }

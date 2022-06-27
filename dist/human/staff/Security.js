@@ -22,8 +22,10 @@ var Staff_1 = require("./Staff");
  */
 var Security = /** @class */ (function (_super) {
     __extends(Security, _super);
-    function Security(name, age, category, gender) {
-        return _super.call(this, name, age, category, gender) || this;
+    function Security(name, age, category, gender, salary) {
+        var _this = _super.call(this, name, age, category, gender, salary) || this;
+        _this.salary = salary;
+        return _this;
     }
     return Security;
 }(Staff_1.Staff));

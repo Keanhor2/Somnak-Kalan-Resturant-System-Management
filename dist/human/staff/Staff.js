@@ -30,10 +30,14 @@ var Role;
  */
 var Staff = /** @class */ (function (_super) {
     __extends(Staff, _super);
-    function Staff(name, age, category, gender) {
+    function Staff(name, age, category, gender, salary, phone) {
         var _this = _super.call(this, name, age, gender) || this;
+        _this.name = name;
+        _this.age = age;
         _this.category = category;
-        _this.salary = 0; // by default
+        _this.gender = gender;
+        _this.salary = salary;
+        _this.phone = phone;
         return _this;
     }
     return Staff;

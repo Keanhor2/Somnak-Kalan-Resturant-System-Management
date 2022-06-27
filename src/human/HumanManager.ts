@@ -7,4 +7,15 @@ export class HumanManager {
   addCustomer(...customer:Customer[]){
     this.customers = this.customers.concat(customer);
   }
+  getCustomer(){
+    return this.customers
+  }
+  addStaff(...newStaff:Staff[]) {
+    this.staff = this.staff.concat(newStaff);
+  }
+  getStaff(){
+    return this.staff
+  }
 }
+
+

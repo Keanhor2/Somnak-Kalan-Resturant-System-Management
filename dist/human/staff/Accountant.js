@@ -19,8 +19,10 @@ exports.Accountant = void 0;
 var Staff_1 = require("./Staff");
 var Accountant = /** @class */ (function (_super) {
     __extends(Accountant, _super);
-    function Accountant(name, age, category, gender) {
-        return _super.call(this, name, age, category, gender) || this;
+    function Accountant(name, age, category, gender, salary) {
+        var _this = _super.call(this, name, age, category, gender, salary) || this;
+        _this.salary = salary;
+        return _this;
     }
     return Accountant;
 }(Staff_1.Staff));

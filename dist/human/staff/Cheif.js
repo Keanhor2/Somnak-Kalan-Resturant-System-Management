@@ -22,8 +22,10 @@ var Staff_1 = require("./Staff");
  */
 var Cheif = /** @class */ (function (_super) {
     __extends(Cheif, _super);
-    function Cheif(name, age, category, gender) {
-        return _super.call(this, name, age, category, gender) || this;
+    function Cheif(name, age, category, gender, salary) {
+        var _this = _super.call(this, name, age, category, gender, salary) || this;
+        _this.salary = salary;
+        return _this;
     }
     return Cheif;
 }(Staff_1.Staff));

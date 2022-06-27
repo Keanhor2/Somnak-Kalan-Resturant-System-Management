@@ -10,14 +10,12 @@ var Gender;
  * Any personn in the hospital - common attributes
  */
 var Person = /** @class */ (function () {
-    function Person(name, age, gender) {
+    function Person(name, age, gender, phone) {
         this.name = name;
         this.age = age;
         this.gender = gender;
-    }
-    Person.prototype.setPhone = function (phone) {
         this.phone = phone;
-    };
+    }
     return Person;
 }());
 exports.Person = Person;

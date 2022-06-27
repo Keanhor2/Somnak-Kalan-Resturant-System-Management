@@ -22,8 +22,10 @@ var Staff_1 = require("./Staff");
  */
 var Waiter = /** @class */ (function (_super) {
     __extends(Waiter, _super);
-    function Waiter(name, age, category, gender) {
-        return _super.call(this, name, age, category, gender) || this;
+    function Waiter(name, age, category, gender, salary) {
+        var _this = _super.call(this, name, age, category, gender, salary) || this;
+        _this.salary = salary;
+        return _this;
     }
     return Waiter;
 }(Staff_1.Staff));
