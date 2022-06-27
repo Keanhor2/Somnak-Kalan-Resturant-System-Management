@@ -5,5 +5,4 @@ export class DateTimes {
     public year: number,
     public time: number
   ) {}
-
 }

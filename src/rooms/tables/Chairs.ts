@@ -9,6 +9,6 @@ export class Chair {
   getCustomerInChair(){
     return this.customer;
   }
-  
+ 
  }
  

@@ -23,5 +23,12 @@ export class Room {
   isFreeRoom(){
     return this.customers.length
   }
+  getTable(){
+    return this.tables;
+  }
+  getChair(){
+    return this.chairs.length;
+  }
+ 
  
 }

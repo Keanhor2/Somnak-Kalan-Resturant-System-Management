@@ -4,8 +4,11 @@ import { Chair } from "./tables/Chairs";
 export class RoomsManager {
   public rooms: Room[] = [];
   public kitchen: Kitchen;
-  addRoom(room: Room) {
-    this.rooms.push(room);
+  addRoom(...room: Room[]) {
+    this.rooms = this.rooms.concat(room);
+  }
+  countRoomInrestaurant(){
+    return this.rooms.length;
   }
   listRoomInRestart() {
     let roomInRestaurant: Room[] = [];
@@ -46,6 +49,24 @@ export class RoomsManager {
       }
     }
     return chairs
+  }
+  checkRoomNotHaveTable() {
+    let roomID:number[] =[]
+    for (let room of this.rooms) {
+      if(! room.getTable()){
+        roomID.push(room['id'])
+      }
+    }
+    return roomID
+  }
+  checkRoomNotHaveChair() {
+    let roomID:number[] =[]
+    for (let room of this.rooms) {
+      if(room.getChair()==0){
+        roomID.push(room['id'])
+      }
+    }
+    return roomID
   }
  
 }

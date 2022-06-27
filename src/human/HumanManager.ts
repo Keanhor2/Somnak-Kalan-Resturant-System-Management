@@ -16,6 +16,9 @@ export class HumanManager {
   getStaff(){
     return this.staff
   }
+  countAllStaffInRestaurants(){
+    return this.staff.length
+  }
 }
 
 

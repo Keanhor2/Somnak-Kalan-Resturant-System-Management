@@ -27,14 +27,22 @@ import { Tables } from "./rooms/tables/Tables";
 //Room eating //
 let room1 = new Room(1);
 let room2 = new Room(2);
+let room3 = new Room(3);
+let room4 = new Room(4);
+let room5 = new Room(5);
+let room6 = new Room(6);
+let room7 = new Room(7);
+let room8 = new Room(8);
+let room9 = new Room(9);
+let room10 = new Room(10);
 //Add room to Restaurant
 let restaurant = new Restaurant('PNC Restuarant','Phnom Penh');
-restaurant.rooms.addRoom(room1);
-restaurant.rooms.addRoom(room2);
+restaurant.rooms.addRoom(room1,room2,room3,room4,room5,room6,room7,room8,room9,room10);
 //create Tables and add to room
 let tables = new Tables()
 room1.addTable(tables);
 room2.addTable(tables);
+room3.addTable(tables);
 // create customer and add to room and CustomerOrder room
 let kea = new Customer('kea',20, Gender.MALE,'123456');
 let somnak = new Customer('somnak',19, Gender.MALE,'345678');
@@ -60,7 +68,9 @@ let end1 = new DateTimes('Moanday','May',2022,10);
 // add room that customer book
 // add Customer's name book
 let bookTable = new CustomerBook(BookCategory.CUSTOMERBOOK,start1,end1,room1,kea);
-restaurant.calendar.addBook(bookTable);
+let bookTable1 = new CustomerBook(BookCategory.CUSTOMERBOOK,start1,end1,room2,somnak);
+let bookTable2 = new CustomerBook(BookCategory.CUSTOMERBOOK,start1,end1,room2,cham);
+restaurant.calendar.addBook(bookTable,bookTable1);
 
 // add staffs
 let somnak1 = new Manager('Somnak',12,Role.MANAGER,Gender.MALE,1000);
@@ -95,6 +105,7 @@ menuItem.addDrink(beer,coke,string,winner)
 */
 let menu = new Menu()
 menu.addMenuItem(menuItem)
+
 /* 
     add menu to table
 */
@@ -122,4 +133,4 @@ restaurant.rooms.kitchen = kitchens;
 
 
 //all in restaurant
-console.log(restaurant);
+console.log(menu.getAllItemInMenu());

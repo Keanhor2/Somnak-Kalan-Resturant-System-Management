@@ -7,4 +7,7 @@ export class Tables {
  addMenuToTable(menu:Menu){
     this.menus = menu
  }
+ getTable(){
+   return this.menus
+ }
 }

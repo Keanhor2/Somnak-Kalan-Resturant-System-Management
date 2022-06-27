@@ -20,7 +20,7 @@ export class Staff extends Person {
     protected salary: number,
     protected phone?: string
   ) {
-    super(name, age, gender);
+    super(name, age, gender,phone);
   }
 
  
