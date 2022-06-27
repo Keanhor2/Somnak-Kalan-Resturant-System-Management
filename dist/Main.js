@@ -16,6 +16,7 @@ var Drinks_1 = require("./rooms/Kitchen/Drinks");
 var EnumDrink_1 = require("./rooms/Kitchen/EnumDrink");
 var EnumFood_1 = require("./rooms/Kitchen/EnumFood");
 var Food_1 = require("./rooms/Kitchen/Food");
+var Kitchen_1 = require("./rooms/Kitchen/Kitchen");
 var Menu_1 = require("./rooms/Orders/Menu");
 var MenuItem_1 = require("./rooms/Orders/MenuItem");
 var Room_1 = require("./rooms/Room");
@@ -64,7 +65,9 @@ restaurant.calendar.addBook(bookTable);
 // add staffs
 var somnak1 = new Manager_1.Manager('Somnak', 12, Staff_1.Role.MANAGER, Person_1.Gender.MALE, 1000);
 var Theary = new Accountant_1.Accountant('Theary', 20, Staff_1.Role.ACCOUNTANT, Person_1.Gender.FEMALE, 600);
-var kea1 = new Cheif_1.Cheif('Kea', 20, Staff_1.Role.CHEIF, Person_1.Gender.MALE, 700);
+var kea1 = new Cheif_1.Chef('Kea', 20, Staff_1.Role.CHEIF, Person_1.Gender.MALE, 700);
+var kea2 = new Cheif_1.Chef('Kea', 20, Staff_1.Role.CHEIF, Person_1.Gender.MALE, 700);
+var kea3 = new Cheif_1.Chef('Kea', 20, Staff_1.Role.CHEIF, Person_1.Gender.MALE, 700);
 var vanda = new Security_1.Security('Vanda', 22, Staff_1.Role.SECURITY, Person_1.Gender.MALE, 300);
 var kana = new Waiter_1.Waiter('Kana', 20, Staff_1.Role.WAITER, Person_1.Gender.FEMALE, 250);
 var jock = new Waiter_1.Waiter('Jock', 20, Staff_1.Role.WAITER, Person_1.Gender.MALE, 250);
@@ -94,6 +97,15 @@ menu.addMenuItem(menuItem);
     add menu to table
 */
 tables.addMenuToTable(menu);
+/*
+    add chef to kitchen
+*/
+var kitchens = new Kitchen_1.Kitchen();
+kitchens.addChefToKitchen(kea1, kea2, kea3);
+/*
+    add kitchen to restaurant
+*/
+restaurant.rooms.kitchen = kitchens;
 //MAIN MENU
 //list all room in restaurant;
 // console.log(restaurant.rooms.listRoomInRestart());
@@ -104,4 +116,4 @@ tables.addMenuToTable(menu);
 //check chair number that free
 // console.log(restaurant.rooms.checkFreeChair());
 //all in restaurant
-console.log(restaurant['rooms']);
+console.log(restaurant);

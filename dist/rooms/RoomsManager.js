@@ -6,7 +6,7 @@ var RoomsManager = /** @class */ (function () {
         this.rooms = [];
     }
     RoomsManager.prototype.addRoom = function (room) {
-        return this.rooms.push(room);
+        this.rooms.push(room);
     };
     RoomsManager.prototype.listRoomInRestart = function () {
         var roomInRestaurant = [];
