@@ -15,8 +15,12 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.CustomerBook = void 0;
+exports.CustomerBook = exports.roomID = void 0;
 var Book_1 = require("./Book");
+var roomID;
+(function (roomID) {
+    roomID["roomID"] = "roomID";
+})(roomID = exports.roomID || (exports.roomID = {}));
 var CustomerBook = /** @class */ (function (_super) {
     __extends(CustomerBook, _super);
     function CustomerBook(category, start, end, roomID, customer) {

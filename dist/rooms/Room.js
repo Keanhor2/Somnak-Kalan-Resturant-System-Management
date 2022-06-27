@@ -30,6 +30,12 @@ var Room = /** @class */ (function () {
     Room.prototype.isFreeRoom = function () {
         return this.customers.length;
     };
+    Room.prototype.getTable = function () {
+        return this.tables;
+    };
+    Room.prototype.getChair = function () {
+        return this.chairs.length;
+    };
     return Room;
 }());
 exports.Room = Room;

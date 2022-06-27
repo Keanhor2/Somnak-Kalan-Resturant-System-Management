@@ -5,8 +5,15 @@ var RoomsManager = /** @class */ (function () {
     function RoomsManager() {
         this.rooms = [];
     }
-    RoomsManager.prototype.addRoom = function (room) {
-        this.rooms.push(room);
+    RoomsManager.prototype.addRoom = function () {
+        var room = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            room[_i] = arguments[_i];
+        }
+        this.rooms = this.rooms.concat(room);
+    };
+    RoomsManager.prototype.countRoomInrestaurant = function () {
+        return this.rooms.length;
     };
     RoomsManager.prototype.listRoomInRestart = function () {
         var roomInRestaurant = [];
@@ -53,6 +60,26 @@ var RoomsManager = /** @class */ (function () {
             }
         }
         return chairs;
+    };
+    RoomsManager.prototype.checkRoomNotHaveTable = function () {
+        var roomID = [];
+        for (var _i = 0, _a = this.rooms; _i < _a.length; _i++) {
+            var room = _a[_i];
+            if (!room.getTable()) {
+                roomID.push(room['id']);
+            }
+        }
+        return roomID;
+    };
+    RoomsManager.prototype.checkRoomNotHaveChair = function () {
+        var roomID = [];
+        for (var _i = 0, _a = this.rooms; _i < _a.length; _i++) {
+            var room = _a[_i];
+            if (room.getChair() == 0) {
+                roomID.push(room['id']);
+            }
+        }
+        return roomID;
     };
     return RoomsManager;
 }());

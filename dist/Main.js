@@ -28,14 +28,22 @@ var Tables_1 = require("./rooms/tables/Tables");
 //Room eating //
 var room1 = new Room_1.Room(1);
 var room2 = new Room_1.Room(2);
+var room3 = new Room_1.Room(3);
+var room4 = new Room_1.Room(4);
+var room5 = new Room_1.Room(5);
+var room6 = new Room_1.Room(6);
+var room7 = new Room_1.Room(7);
+var room8 = new Room_1.Room(8);
+var room9 = new Room_1.Room(9);
+var room10 = new Room_1.Room(10);
 //Add room to Restaurant
 var restaurant = new Rataurant_1.Restaurant('PNC Restuarant', 'Phnom Penh');
-restaurant.rooms.addRoom(room1);
-restaurant.rooms.addRoom(room2);
+restaurant.rooms.addRoom(room1, room2, room3, room4, room5, room6, room7, room8, room9, room10);
 //create Tables and add to room
 var tables = new Tables_1.Tables();
 room1.addTable(tables);
 room2.addTable(tables);
+room3.addTable(tables);
 // create customer and add to room and CustomerOrder room
 var kea = new Customers_1.Customer('kea', 20, Person_1.Gender.MALE, '123456');
 var somnak = new Customers_1.Customer('somnak', 19, Person_1.Gender.MALE, '345678');
@@ -61,7 +69,9 @@ var end1 = new DateTime_1.DateTimes('Moanday', 'May', 2022, 10);
 // add room that customer book
 // add Customer's name book
 var bookTable = new CustomerBook_1.CustomerBook(Book_1.BookCategory.CUSTOMERBOOK, start1, end1, room1, kea);
-restaurant.calendar.addBook(bookTable);
+var bookTable1 = new CustomerBook_1.CustomerBook(Book_1.BookCategory.CUSTOMERBOOK, start1, end1, room2, somnak);
+var bookTable2 = new CustomerBook_1.CustomerBook(Book_1.BookCategory.CUSTOMERBOOK, start1, end1, room2, cham);
+restaurant.calendar.addBook(bookTable, bookTable1);
 // add staffs
 var somnak1 = new Manager_1.Manager('Somnak', 12, Staff_1.Role.MANAGER, Person_1.Gender.MALE, 1000);
 var Theary = new Accountant_1.Accountant('Theary', 20, Staff_1.Role.ACCOUNTANT, Person_1.Gender.FEMALE, 600);
@@ -116,4 +126,4 @@ restaurant.rooms.kitchen = kitchens;
 //check chair number that free
 // console.log(restaurant.rooms.checkFreeChair());
 //all in restaurant
-console.log(restaurant);
+console.log(menu.getAllItemInMenu());

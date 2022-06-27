@@ -7,6 +7,9 @@ var Tables = /** @class */ (function () {
     Tables.prototype.addMenuToTable = function (menu) {
         this.menus = menu;
     };
+    Tables.prototype.getTable = function () {
+        return this.menus;
+    };
     return Tables;
 }());
 exports.Tables = Tables;
