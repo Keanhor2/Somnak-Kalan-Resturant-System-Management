@@ -16,7 +16,7 @@ export class CalendarManagers {
       return 'This room has been Order'
     }
   }
-  getBook(){
+  getAllBooksByCustomer() {
     return this.books
   }
 }

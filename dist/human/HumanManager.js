@@ -29,6 +29,9 @@ var HumanManager = /** @class */ (function () {
     HumanManager.prototype.countAllStaffInRestaurants = function () {
         return this.staff.length;
     };
+    HumanManager.prototype.getAmountOfCustomerDay = function () {
+        return this.customers.length;
+    };
     return HumanManager;
 }());
 exports.HumanManager = HumanManager;

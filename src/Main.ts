@@ -16,11 +16,10 @@ import { FoodCategory } from "./rooms/Kitchen/EnumFood";
 import { Foods } from "./rooms/Kitchen/Food";
 import { Kitchen } from "./rooms/Kitchen/Kitchen";
 import { Menu } from "./rooms/Orders/Menu";
-import { MenuItem } from "./rooms/Orders/MenuItem";
+import { MenuItem, typeMenu } from "./rooms/Orders/MenuItem";
 import { Room } from "./rooms/Room";
 import { Chair } from "./rooms/tables/Chairs";
 import { Tables } from "./rooms/tables/Tables";
-
 /* 
     Room Management
 */
@@ -120,17 +119,6 @@ kitchens.addChefToKitchen(kea1,kea2,kea3);
 */
 restaurant.rooms.kitchen = kitchens;
 //MAIN MENU
-//list all room in restaurant;
-// console.log(restaurant.rooms.listRoomInRestart());
-//list room that user input id Room
-// console.log(restaurant.rooms.findRoomByRoomId(room2));
-
-//check Which room has free chair or Remaining chair
-// console.log(restaurant.rooms.checkAllRoomFreeChair());
-
-//check chair number that free
-// console.log(restaurant.rooms.checkFreeChair());
-
 
 //all in restaurant
-console.log(menu.getAllItemInMenu());
+console.log(restaurant.calendar.getAllBooksByCustomer());

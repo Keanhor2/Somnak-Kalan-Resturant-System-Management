@@ -24,7 +24,7 @@ var CalendarManagers = /** @class */ (function () {
             return 'This room has been Order';
         }
     };
-    CalendarManagers.prototype.getBook = function () {
+    CalendarManagers.prototype.getAllBooksByCustomer = function () {
         return this.books;
     };
     return CalendarManagers;

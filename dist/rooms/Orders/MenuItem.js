@@ -1,6 +1,11 @@
 "use strict";
 exports.__esModule = true;
-exports.MenuItem = void 0;
+exports.MenuItem = exports.typeMenu = void 0;
+var typeMenu;
+(function (typeMenu) {
+    typeMenu["FOOD"] = "foods";
+    typeMenu["DRINKS"] = "drinks";
+})(typeMenu = exports.typeMenu || (exports.typeMenu = {}));
 var MenuItem = /** @class */ (function () {
     function MenuItem() {
         this.foods = [];
@@ -19,6 +24,12 @@ var MenuItem = /** @class */ (function () {
             drink[_i] = arguments[_i];
         }
         this.drinks = this.drinks.concat(drink);
+    };
+    MenuItem.prototype.getEnumDrink = function () {
+        return typeMenu.DRINKS;
+    };
+    MenuItem.prototype.getEnumFood = function () {
+        return typeMenu.FOOD;
     };
     return MenuItem;
 }());

@@ -117,13 +117,5 @@ kitchens.addChefToKitchen(kea1, kea2, kea3);
 */
 restaurant.rooms.kitchen = kitchens;
 //MAIN MENU
-//list all room in restaurant;
-// console.log(restaurant.rooms.listRoomInRestart());
-//list room that user input id Room
-// console.log(restaurant.rooms.findRoomByRoomId(room2));
-//check Which room has free chair or Remaining chair
-// console.log(restaurant.rooms.checkAllRoomFreeChair());
-//check chair number that free
-// console.log(restaurant.rooms.checkFreeChair());
 //all in restaurant
-console.log(menu.getAllItemInMenu());
+console.log(restaurant.calendar.getAllBooksByCustomer());

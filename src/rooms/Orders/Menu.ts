@@ -11,10 +11,11 @@ export class Menu {
  }
  inputTypeFoodsOrDrinks(items:typeMenu){
    for(let item of this.menuItem){
-      let items = item as MenuItem;
-    return items
-
-    
+      if(item.getEnumFood()===items){
+         return item[item.getEnumFood()];
+      }else if( item.getEnumDrink()=== items){
+         return item[item.getEnumDrink()];
+      }
    }
   }
 }

@@ -3,7 +3,6 @@ import { Chair } from "./tables/Chairs";
 import { Tables } from "./tables/Tables";
 
 export class Room {
-  
   private tables: Tables;
   private chairs:Chair[] = [];
   private customers:Customer[] = [];

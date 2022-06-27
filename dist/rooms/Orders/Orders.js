@@ -2,7 +2,8 @@
 exports.__esModule = true;
 exports.Orders = void 0;
 var Orders = /** @class */ (function () {
-    function Orders() {
+    function Orders(amount) {
+        this.amount = amount;
         this.menuItems = [];
     }
     return Orders;
