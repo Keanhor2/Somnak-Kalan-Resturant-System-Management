@@ -6,4 +6,7 @@ export class Customer extends Person {
     super(name, age, gender);
 
   }
+  isTheName(){
+    return this.name;
+  }
 }

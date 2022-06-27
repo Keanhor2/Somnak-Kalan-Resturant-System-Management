@@ -1,5 +1,5 @@
 
-export class Chars {
+export class Chair {
    constructor(private chair: number) {}
   
  }

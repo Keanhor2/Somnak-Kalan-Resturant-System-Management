@@ -1,8 +1,8 @@
 import { Book } from "./Book";
 
-export class CalendarManager {
+export class CalendarManagers {
   public books: Book[] = [];
-  addEvent(book: Book) {
+  addBook(book: Book) {
     this.books.push(book);
   }
   }

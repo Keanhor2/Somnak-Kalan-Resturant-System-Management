@@ -1,14 +1,16 @@
 import { Customer } from "../human/Customers/Customers";
+import { Room } from "../rooms/Room";
 import { Book, BookCategory } from "./Book";
-import { DateTime } from "./DateTime";
+import { DateTimes } from "./DateTime";
 
-export class DoctorAppointment extends Book {
+export class CustomerBook extends Book {
   constructor(
     category: BookCategory,
-    start: DateTime,
-    end: DateTime,
+    start: DateTimes,
+    end: DateTimes,
+    roomID:Room,
     private customer:Customer
   ) {
-    super(category, start, end);
+    super(category, start, end,roomID);
   }
 }

@@ -1,4 +1,4 @@
-export class DateTime {
+export class DateTimes {
   constructor(
     public day: String,
     public month: String,
