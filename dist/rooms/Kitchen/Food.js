@@ -7,6 +7,9 @@ var Foods = /** @class */ (function () {
         this.food = food;
         this.price = price;
     }
+    Foods.prototype.getFoodId = function () {
+        return this.foodId;
+    };
     return Foods;
 }());
 exports.Foods = Foods;

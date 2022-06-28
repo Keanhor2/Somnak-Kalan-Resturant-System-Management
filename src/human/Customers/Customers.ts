@@ -1,7 +1,6 @@
 import { Orders } from "../../rooms/Orders/Orders";
 import { Gender, Person } from "../Person";
 export class Customer extends Person {
-  private orders: Orders[] = [];
   constructor(name: string, age: number, gender: Gender,phone: string) {
     super(name, age, gender,phone);
   }

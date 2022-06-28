@@ -7,6 +7,9 @@ var Drinks = /** @class */ (function () {
         this.name = name;
         this.price = price;
     }
+    Drinks.prototype.getDrinkID = function () {
+        return this.drinkId;
+    };
     return Drinks;
 }());
 exports.Drinks = Drinks;

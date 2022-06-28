@@ -16,7 +16,7 @@ import { FoodCategory } from "./rooms/Kitchen/EnumFood";
 import { Foods } from "./rooms/Kitchen/Food";
 import { Kitchen } from "./rooms/Kitchen/Kitchen";
 import { Menu } from "./rooms/Orders/Menu";
-import { MenuItem, typeMenu } from "./rooms/Orders/MenuItem";
+import { MenuItem, typeMenu, typeNumber } from "./rooms/Orders/MenuItem";
 import { Orders } from "./rooms/Orders/Orders";
 import { Room } from "./rooms/Room";
 import { Chair } from "./rooms/tables/Chairs";
@@ -113,6 +113,7 @@ let kaka = new Customer('Kaka',22,Gender.FEMALE,'09640500');
 let kiki = new Customer('Kiki',22,Gender.FEMALE,'097444434');
 let kham = new Customer('Kham',22,Gender.MALE,'0124893343');
 restaurant.hr.addCustomer(kaka,kiki,kham);
+room5.addCustomerToRoom(kaka)
 
 
 
@@ -155,9 +156,10 @@ restaurant.rooms.kitchen = kitchens;
 /* 
     Order Food and Drinks
 */
-let order = new Orders(FoodCategory.DESSERT,4,DrinkCategory.COKE,4,kaka);
-
+let order1 = new Orders(typeNumber.number2,4,typeNumber.number2,4,kaka,room5);
+kitchens.addOrder(order1);
 //MAIN MENU
+console.log(menu.getFood(2));
 
-//all in restaurant
-console.log(order);
+
+

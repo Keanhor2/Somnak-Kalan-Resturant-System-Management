@@ -19,6 +19,7 @@ var Food_1 = require("./rooms/Kitchen/Food");
 var Kitchen_1 = require("./rooms/Kitchen/Kitchen");
 var Menu_1 = require("./rooms/Orders/Menu");
 var MenuItem_1 = require("./rooms/Orders/MenuItem");
+var Orders_1 = require("./rooms/Orders/Orders");
 var Room_1 = require("./rooms/Room");
 var Chairs_1 = require("./rooms/tables/Chairs");
 var Tables_1 = require("./rooms/tables/Tables");
@@ -108,6 +109,7 @@ var kaka = new Customers_1.Customer('Kaka', 22, Person_1.Gender.FEMALE, '0964050
 var kiki = new Customers_1.Customer('Kiki', 22, Person_1.Gender.FEMALE, '097444434');
 var kham = new Customers_1.Customer('Kham', 22, Person_1.Gender.MALE, '0124893343');
 restaurant.hr.addCustomer(kaka, kiki, kham);
+room5.addCustomerToRoom(kaka);
 /*
     food and drink
 */
@@ -142,6 +144,10 @@ kitchens.addChefToKitchen(kea, chan, jan, ronan, cham);
     add kitchen to restaurant
 */
 restaurant.rooms.kitchen = kitchens;
+/*
+    Order Food and Drinks
+*/
+var order1 = new Orders_1.Orders(MenuItem_1.typeNumber.number2, 4, MenuItem_1.typeNumber.number2, 4, kaka, room5);
+kitchens.addOrder(order1);
 //MAIN MENU
-//all in restaurant
-console.log(restaurant.rooms.listRoomInRestart());
+console.log(menu.getFood(2));
