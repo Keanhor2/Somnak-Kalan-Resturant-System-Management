@@ -16,4 +16,5 @@ export class Restaurant {
     this.name = name;
     this.address = address;
   }
+  
 }

@@ -19,7 +19,7 @@ exports.Staff = exports.Salary = exports.Role = void 0;
 var Person_1 = require("../Person");
 var Role;
 (function (Role) {
-    Role["CHEIF"] = "CHEIF";
+    Role["CHEF"] = "CHEF";
     Role["WAITER"] = "WAITER";
     Role["SECURITY"] = "SECURITY";
     Role["MANAGER"] = "MANAGER";
@@ -48,6 +48,9 @@ var Staff = /** @class */ (function (_super) {
         _this.phone = phone;
         return _this;
     }
+    Staff.prototype.getChef = function () {
+        return Role.CHEF;
+    };
     return Staff;
 }(Person_1.Person));
 exports.Staff = Staff;

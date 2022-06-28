@@ -15,16 +15,16 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.Security = void 0;
+exports.Chef = void 0;
 var Staff_1 = require("./Staff");
 /**
  * A nurse manage patient checks
  */
-var Security = /** @class */ (function (_super) {
-    __extends(Security, _super);
-    function Security(name, age, category, gender) {
-        return _super.call(this, name, age, category, gender, Staff_1.Salary.SECURITY_SALARY) || this;
+var Chef = /** @class */ (function (_super) {
+    __extends(Chef, _super);
+    function Chef(name, age, category, gender) {
+        return _super.call(this, name, age, category, gender, Staff_1.Salary.CHEIF_SALARY) || this;
     }
-    return Security;
+    return Chef;
 }(Staff_1.Staff));
-exports.Security = Security;
+exports.Chef = Chef;

@@ -1,7 +1,7 @@
 import { Gender, Person } from "../Person";
 
 export enum Role {
-  CHEIF='CHEIF',
+  CHEF='CHEF',
   WAITER='WAITER',
   SECURITY='SECURITY',
   MANAGER='MANAGER',
@@ -31,7 +31,9 @@ export class Staff extends Person {
   ) {
     super(name, age, gender,phone);
   }
-
+  getChef(){
+    return Role.CHEF
+  }
  
 
 }

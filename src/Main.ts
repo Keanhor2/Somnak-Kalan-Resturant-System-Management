@@ -4,7 +4,7 @@ import { DateTimes } from "./calendar/DateTime";
 import { Customer } from "./human/Customers/Customers";
 import { Gender } from "./human/Person";
 import { Accountant } from "./human/staff/Accountant";
-import { Cheif } from "./human/staff/Cheif";
+import { Chef } from "./human/staff/Chef";
 import { Manager } from "./human/staff/Manager";
 import { Security } from "./human/staff/Security";
 import { Role, Salary } from "./human/staff/Staff";
@@ -73,38 +73,38 @@ restaurant.calendar.addBook(bookTable,bookTable1);
 
 // add staffs
 // add a Manager
-let somnak = new Manager('Somnak',12,Role.MANAGER,Gender.MALE,Salary.MANAGER_SALARY);
+let somnak = new Manager('Somnak',12,Role.MANAGER,Gender.MALE);
 restaurant.hr.addStaff(somnak);
 
 // add two accountants
-let theary = new Accountant('Theary',20,Role.ACCOUNTANT,Gender.FEMALE,Salary.ACCOUNTANT_SALARY);
-let nana = new Accountant('Nana',20,Role.ACCOUNTANT,Gender.FEMALE,Salary.ACCOUNTANT_SALARY);
+let theary = new Accountant('Theary',20,Role.ACCOUNTANT,Gender.FEMALE);
+let nana = new Accountant('Nana',20,Role.ACCOUNTANT,Gender.FEMALE);
 restaurant.hr.addStaff(theary,nana);
 
 // add 5 cheifs
-let kea = new Cheif('Kea',20,Role.CHEIF,Gender.MALE,Salary.CHEIF_SALARY);
-let chan = new Cheif('Chan',20,Role.CHEIF,Gender.FEMALE,Salary.CHEIF_SALARY);
-let jan = new Cheif('Jan',20,Role.CHEIF,Gender.FEMALE,Salary.CHEIF_SALARY);
-let ronan = new Cheif('Ronan',20,Role.CHEIF,Gender.MALE,Salary.CHEIF_SALARY);
-let cham = new Cheif('Cham',20,Role.CHEIF,Gender.MALE,Salary.CHEIF_SALARY);
+let kea = new Chef('Kea',20,Role.CHEF,Gender.MALE);
+let chan = new Chef('Chan',20,Role.CHEF,Gender.FEMALE);
+let jan = new Chef('Jan',20,Role.CHEF,Gender.FEMALE);
+let ronan = new Chef('Ronan',20,Role.CHEF,Gender.MALE);
+let cham = new Chef('Cham',20,Role.CHEF,Gender.MALE);
 restaurant.hr.addStaff(kea,chan,jan,ronan,cham);
 
 // add two security
-let vanda = new Security('Vanda',22,Role.SECURITY,Gender.MALE,Salary.SECURITY_SALARY);
-let sok = new Security('Sok',22,Role.SECURITY,Gender.MALE,Salary.SECURITY_SALARY);
+let vanda = new Security('Vanda',22,Role.SECURITY,Gender.MALE);
+let sok = new Security('Sok',22,Role.SECURITY,Gender.MALE);
 restaurant.hr.addStaff(vanda,sok);
 
 // add 20 waiter-
-let kana = new Waiter('Kana',20,Role.WAITER,Gender.FEMALE,Salary.WAITER_SALARY);
-let jock = new Waiter('Jock',20,Role.WAITER,Gender.MALE,Salary.WAITER_SALARY);
-let sorey = new Waiter('Sorey',20,Role.WAITER,Gender.FEMALE,Salary.WAITER_SALARY);
-let jonh = new Waiter('Jonh',20,Role.WAITER,Gender.MALE,Salary.WAITER_SALARY);
-let chakrya = new Waiter('Chakrya',20,Role.WAITER,Gender.FEMALE,Salary.WAITER_SALARY);
-let chet = new Waiter('Chet',20,Role.WAITER,Gender.MALE,Salary.WAITER_SALARY);
-let jav = new Waiter('Jav',20,Role.WAITER,Gender.MALE,Salary.WAITER_SALARY);
-let virak = new Waiter('Virak',20,Role.WAITER,Gender.MALE,Salary.WAITER_SALARY);
-let son = new Waiter('Son',20,Role.WAITER,Gender.FEMALE,Salary.WAITER_SALARY);
-let kan = new Waiter('Kan',20,Role.WAITER,Gender.MALE,Salary.WAITER_SALARY);
+let kana = new Waiter('Kana',20,Role.WAITER,Gender.FEMALE);
+let jock = new Waiter('Jock',20,Role.WAITER,Gender.MALE);
+let sorey = new Waiter('Sorey',20,Role.WAITER,Gender.FEMALE);
+let jonh = new Waiter('Jonh',20,Role.WAITER,Gender.MALE);
+let chakrya = new Waiter('Chakrya',20,Role.WAITER,Gender.FEMALE);
+let chet = new Waiter('Chet',20,Role.WAITER,Gender.MALE);
+let jav = new Waiter('Jav',20,Role.WAITER,Gender.MALE);
+let virak = new Waiter('Virak',20,Role.WAITER,Gender.MALE);
+let son = new Waiter('Son',20,Role.WAITER,Gender.FEMALE);
+let kan = new Waiter('Kan',20,Role.WAITER,Gender.MALE);
 restaurant.hr.addStaff(kana,jock,sorey,jonh,chakrya,chet,jav,virak,son,kan);
 
 // add customers 
@@ -154,4 +154,4 @@ restaurant.rooms.kitchen = kitchens;
 //MAIN MENU
 
 //all in restaurant
-console.log(restaurant.calendar.getAllBooksByCustomer());
+console.log(restaurant.rooms.listRoomInRestart());

@@ -19,8 +19,8 @@ exports.Accountant = void 0;
 var Staff_1 = require("./Staff");
 var Accountant = /** @class */ (function (_super) {
     __extends(Accountant, _super);
-    function Accountant(name, age, category, gender, salary) {
-        return _super.call(this, name, age, category, gender, salary) || this;
+    function Accountant(name, age, category, gender) {
+        return _super.call(this, name, age, category, gender, Staff_1.Salary.ACCOUNTANT_SALARY) || this;
     }
     // customers pay for a food
     Accountant.prototype.getCustomerPayment = function () {

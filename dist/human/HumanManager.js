@@ -1,6 +1,7 @@
 "use strict";
 exports.__esModule = true;
 exports.HumanManager = void 0;
+var Staff_1 = require("./staff/Staff");
 var HumanManager = /** @class */ (function () {
     function HumanManager() {
         this.customers = [];
@@ -31,6 +32,20 @@ var HumanManager = /** @class */ (function () {
     };
     HumanManager.prototype.getAmountOfCustomerDay = function () {
         return this.customers.length;
+    };
+    /*
+    *All spend in a Month for staff members
+    */
+    HumanManager.prototype.getRestaurantsSpeedInMonth = function () {
+        var result = 0;
+        for (var _i = 0, _a = this.staff; _i < _a.length; _i++) {
+            var amount = _a[_i];
+            result += amount['salary'];
+        }
+        return result;
+    };
+    HumanManager.prototype.getStaffS = function () {
+        return this.staff[Staff_1.Role.ACCOUNTANT];
     };
     return HumanManager;
 }());
