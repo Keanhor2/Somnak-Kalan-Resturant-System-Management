@@ -2,13 +2,11 @@
 exports.__esModule = true;
 exports.Tables = void 0;
 var Tables = /** @class */ (function () {
-    function Tables() {
+    function Tables(tableID) {
+        this.tableID = tableID;
     }
-    Tables.prototype.addMenuToTable = function (menu) {
-        this.menus = menu;
-    };
-    Tables.prototype.getTable = function () {
-        return this.menus;
+    Tables.prototype.getTableID = function () {
+        return this.tableID;
     };
     return Tables;
 }());

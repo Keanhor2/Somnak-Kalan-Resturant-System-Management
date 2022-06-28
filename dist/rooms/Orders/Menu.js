@@ -1,16 +1,14 @@
 "use strict";
 exports.__esModule = true;
-exports.Menu = void 0;
+exports.Menu = exports.CategoryType = void 0;
+var CategoryType;
+(function (CategoryType) {
+    CategoryType["DRINK"] = "drinks";
+    CategoryType["FOOD"] = "foods";
+})(CategoryType = exports.CategoryType || (exports.CategoryType = {}));
 var Menu = /** @class */ (function () {
     function Menu() {
         this.menuItem = [];
-        // getDrink() {
-        //    for (let drinks of this.drinks) {
-        //       if (drinks.getDrinkID()) {
-        //          return drinks
-        //       }
-        //    }
-        // }
     }
     Menu.prototype.addMenuItem = function () {
         var item = [];
@@ -33,18 +31,6 @@ var Menu = /** @class */ (function () {
             }
             else if (item.getEnumDrink() === items) {
                 return item[item.getEnumDrink()];
-            }
-        }
-    };
-    /* List name of food that customer order by foodId*/
-    Menu.prototype.getFood = function (num) {
-        for (var _i = 0, _a = this.menuItem; _i < _a.length; _i++) {
-            var foodID = _a[_i];
-            for (var _b = 0, _c = foodID['foods']; _b < _c.length; _b++) {
-                var item = _c[_b];
-                if (item.getFoodId() === num) {
-                    return item;
-                }
             }
         }
     };

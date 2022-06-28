@@ -2,14 +2,42 @@
 exports.__esModule = true;
 exports.Orders = void 0;
 var Orders = /** @class */ (function () {
-    function Orders(foodId, amountOrders, drinkId, amountOrdersDrink, customer, roomID) {
-        this.foodId = foodId;
-        this.amountOrders = amountOrders;
-        this.drinkId = drinkId;
-        this.amountOrdersDrink = amountOrdersDrink;
-        this.customer = customer;
-        this.roomID = roomID;
+    function Orders(orderID) {
+        this.orderID = orderID;
+        this.tables = [];
+        this.customers = [];
+        this.menuItems = [];
     }
+    Orders.prototype.addTable = function () {
+        var table = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            table[_i] = arguments[_i];
+        }
+        this.tables = this.tables.concat(table);
+    };
+    Orders.prototype.setTimes = function (time) {
+        this.times = time;
+    };
+    Orders.prototype.addCustomer = function () {
+        var customer = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            customer[_i] = arguments[_i];
+        }
+        this.customers = this.customers.concat(customer);
+    };
+    Orders.prototype.addMenuItem = function () {
+        var items = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            items[_i] = arguments[_i];
+        }
+        this.menuItems = this.menuItems.concat(items);
+    };
+    Orders.prototype.getOrderID = function () {
+        return this.orderID;
+    };
+    Orders.prototype.getAllTAbles = function () {
+        return this.tables;
+    };
     return Orders;
 }());
 exports.Orders = Orders;
