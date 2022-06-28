@@ -17,6 +17,7 @@ import { Foods } from "./rooms/Kitchen/Food";
 import { Kitchen } from "./rooms/Kitchen/Kitchen";
 import { Menu } from "./rooms/Orders/Menu";
 import { MenuItem, typeMenu } from "./rooms/Orders/MenuItem";
+import { Orders } from "./rooms/Orders/Orders";
 import { Room } from "./rooms/Room";
 import { Chair } from "./rooms/tables/Chairs";
 import { Tables } from "./rooms/tables/Tables";
@@ -151,7 +152,12 @@ kitchens.addChefToKitchen(kea,chan,jan,ronan,cham);
     add kitchen to restaurant
 */
 restaurant.rooms.kitchen = kitchens;
+/* 
+    Order Food and Drinks
+*/
+let order = new Orders(FoodCategory.DESSERT,4,DrinkCategory.COKE,4,kaka);
+
 //MAIN MENU
 
 //all in restaurant
-console.log(restaurant.rooms.listRoomInRestart());
+console.log(order);
