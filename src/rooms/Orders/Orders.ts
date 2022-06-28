@@ -1,7 +1,13 @@
-import { Waiter } from "../../human/staff/Waiter";
-import { MenuItem } from "./MenuItem";
 
+import { Customer } from "../../human/Customers/Customers";
+import { DrinkCategory } from "../Kitchen/EnumDrink";
+import { FoodCategory } from "../Kitchen/EnumFood";
 export  class Orders{
-    private menuItems: MenuItem[] = [];
-    constructor(private amount:number) { }
+    constructor(
+    private food:FoodCategory,
+    private amountOrders:number,
+    private drink:DrinkCategory,
+    private amountOrdersDrink:number,
+    private customer:Customer
+    ) {}
 }

@@ -2,9 +2,11 @@
 exports.__esModule = true;
 exports.Orders = void 0;
 var Orders = /** @class */ (function () {
-    function Orders(amount) {
-        this.amount = amount;
-        this.menuItems = [];
+    function Orders(food, amountOrders, drink, amountOrdersDrink) {
+        this.food = food;
+        this.amountOrders = amountOrders;
+        this.drink = drink;
+        this.amountOrdersDrink = amountOrdersDrink;
     }
     return Orders;
 }());
