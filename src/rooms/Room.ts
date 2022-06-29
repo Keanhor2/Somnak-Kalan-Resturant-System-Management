@@ -1,4 +1,3 @@
-import { Orders } from "./Orders/Orders";
 import { Tables } from "./tables/Tables";
 export enum typeNumber{
   number1=1,
@@ -16,15 +15,4 @@ export class Room {
   getRoomId():number{
     return this.id;
   }
-  getCheckTable(num:typeNumber){
-    let tables:Tables[]=[]
-    for(let table of this.tables){
-      if(table.getTableID()!==num){
-        tables.push(table)
-      }
-    }
-    return tables
-  }
-
- 
 }

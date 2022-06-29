@@ -8,4 +8,3 @@ export class RoomsManager {
     return this.rooms
   }
 }
-

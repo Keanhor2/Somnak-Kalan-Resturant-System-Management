@@ -2,24 +2,17 @@ import { DateTimes } from "../../calendar/DateTime";
 import { Customer } from "../../human/Customers/Customers";
 import { Tables } from "../tables/Tables";
 import { MenuItem } from "./MenuItem";
-
 export  class Orders{
-    constructor(private orderID:number){}
-    private times:DateTimes;
-    private tables:Tables[] = [];
-    private customers:Customer[] = [];
-    private menuItems:MenuItem[] = [];
-    addTable(...table:Tables[]){
-        this.tables = this.tables.concat(table);
+    
+    constructor(private orderID:number, private times:DateTimes,private tables:Tables,private menuItems:MenuItem, private customers:Customer) {}
+    addTable(table:Tables){
+        this.tables= table;
     }
     setTimes(time:DateTimes){
         this.times =time;
     }
-    addCustomer(...customer:Customer[]){
-        this.customers = this.customers.concat(customer);
-    }
-    addMenuItem(...items:MenuItem[]){
-        this.menuItems = this.menuItems.concat(items);
+    addCustomer(customer:Customer){
+        this.customers = customer;
     }
     getOrderID(){
         return this.orderID

@@ -13,6 +13,7 @@ import { Drinks } from "./rooms/Kitchen/Drinks";
 import { DrinkCategory } from "./rooms/Kitchen/EnumDrink";
 import { FoodCategory } from "./rooms/Kitchen/EnumFood";
 import { Foods } from "./rooms/Kitchen/Food";
+import { TableID } from "./rooms/Orders/Enum";
 import { Invoice } from "./rooms/Orders/Invoice";
 import { MenuItem } from "./rooms/Orders/MenuItem";
 import { Orders } from "./rooms/Orders/Orders";
@@ -64,7 +65,6 @@ let virak = new Waiter('Virak',20,Role.WAITER,Gender.MALE);
 let son = new Waiter('Son',20,Role.WAITER,Gender.FEMALE);
 let kan = new Waiter('Kan',20,Role.WAITER,Gender.MALE);
 restaurant.hr.addStaff(kana,jock,sorey,jonh,chakrya,chet,jav,virak,son,kan);
-
 /* 
     food
 */
@@ -78,13 +78,13 @@ let beer = new Drinks(1,DrinkCategory.BEER,200);
 let coke = new Drinks(2,DrinkCategory.COKE,200);
 let string = new Drinks(3,DrinkCategory.STRING,200);
 let winner = new Drinks(4,DrinkCategory.WINER,2000);
-let menuItem = new MenuItem()
-menuItem.addFood(hamburgar)
-menuItem.addDrink(winner,beer)
+let menuItem1 = new MenuItem()
+let menuItem2 = new MenuItem()
+menuItem1.addFood(hamburgar)
+menuItem2.addDrink(winner,beer)
 //create date  time start and end Order ROOMS
 let start1 = new DateTimes('Moanday','May',2022,10);
 let start2 = new DateTimes('Moanday','May',2022,9);
-
 //create Tables and add to room
 let tables1 = new Tables(1)
 let tables2 = new Tables(2)
@@ -94,26 +94,14 @@ room1.addTableToRoom(tables1,tables2,tables3,tables4);
 /* 
     add Table to Order 
 */
-let order = new Orders(1)
-let order2 = new Orders(2)
-order.addTable(tables1)
-order.setTimes(start1)
+let order = new Orders(1,start1,tables1,menuItem1,kea)
 
-order2.addTable(tables2)
-order2.setTimes(start2)
-/* 
-    add Customer to Order 
-*/
-order.addCustomer(kea,somnak)
-order2.addCustomer(kea,somnak)
-/* 
-    add MenuItem to Order
-*/
-order.addMenuItem(menuItem)
-order2.addMenuItem(menuItem)
+
+
 let invoice = new Invoice()
-invoice.addCustomerDone(order,order2)
+invoice.addCustomerDone(order)
+console.log(invoice.getInvoicesBy(kea));
 //MAIN MENU
-console.log(invoice.getInvoices(1));
+
 
 
