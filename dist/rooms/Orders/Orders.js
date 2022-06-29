@@ -10,18 +10,6 @@ var Orders = /** @class */ (function () {
         this.staff = staff;
         this.customers = customers;
     }
-    Orders.prototype.addTable = function (table) {
-        this.tables = table;
-    };
-    Orders.prototype.setTimes = function (time) {
-        this.times = time;
-    };
-    Orders.prototype.addCustomer = function (customer) {
-        this.customers = customer;
-    };
-    Orders.prototype.getOrderID = function () {
-        return this.orderID;
-    };
     return Orders;
 }());
 exports.Orders = Orders;

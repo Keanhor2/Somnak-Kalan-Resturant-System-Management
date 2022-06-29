@@ -1,7 +1,7 @@
 import { Customer } from "../../human/Customers/Customers";
-import { TableID } from "./Enum";
+import { TableID } from "../tables/Tables";
 import { Orders } from "./Orders";
-enum OrderType {
+export enum OrderType {
     TABLE = "tables",
     TABLEID = "tableID",
     TIMES = "times",
@@ -17,6 +17,7 @@ enum OrderType {
 }
 export class Invoice {
     protected orders: Orders[] = [];
+    constructor(private invoicesID: number) { }
     addCustomerDone(...order: Orders[]) {
         this.orders = this.orders.concat(order)
     }
@@ -32,14 +33,14 @@ export class Invoice {
                 date = invoice[OrderType.TIMES][OrderType.DAY] + '-' + invoice[OrderType.TIMES][OrderType.MONTH] + '-' + invoice[OrderType.TIMES][OrderType.YEAR];
                 orderIdAndTableId = 'OrderId :' + invoice[OrderType.ORDERID] + '  ' + 'tableId :' + invoice[OrderType.TABLE][OrderType.TABLEID];
                 times = "Eat In " + "  " + invoice[OrderType.TIMES][OrderType.TIME] + " am"
-                    for (let food of invoice['menuItems'][OrderType.FOOD]) {
-                        foods += food[OrderType.NAME] + ' - ' + food[OrderType.PRICE] + '\n'
-                        total += food[OrderType.PRICE];
-                    }
-                    for (let drink of invoice['menuItems'][OrderType.DRINK]) {
-                        drinks += drink[OrderType.NAME] + ' - ' + drink[OrderType.PRICE] + '\n'
-                        total += drink[OrderType.PRICE];
-                    }
+                for (let food of invoice['menuItems'][OrderType.FOOD]) {
+                    foods += food[OrderType.NAME] + ' - ' + food[OrderType.PRICE] + '\n'
+                    total += food[OrderType.PRICE];
+                }
+                for (let drink of invoice['menuItems'][OrderType.DRINK]) {
+                    drinks += drink[OrderType.NAME] + ' - ' + drink[OrderType.PRICE] + '\n'
+                    total += drink[OrderType.PRICE];
+                }
             }
         }
         return 'Entry: ' + date + '\n'
@@ -49,29 +50,4 @@ export class Invoice {
             + 'Drinks: ' + drinks + '\n'
             + 'Total: ' + total
     }
-    checkCustomerByTime(time: number){
-        for(let check of this.orders){
-            if(check[OrderType.TIMES][OrderType.TIME]==time){
-                return check
-            }
-        }
-    }
-    checkAmountOfCustomerByTimeAndTable(time: number,id:TableID){
-        for(let check of this.orders){
-            if(check[OrderType.TIMES][OrderType.TIME]==time){
-                if(check[OrderType.TABLE][OrderType.TABLEID]==id){
-                    return check
-                }
-                return 'This '+time +' time does not exist tableId: '+id
-            }
-        }
-    }
-    checkFoodDrinkCustomerOrderByName(name:Customer){
-        for(let check of this.orders){
-            if (check['customers'] === name) {
-                return check['menuItems']
-            }
-        }
-    }
-    
 }

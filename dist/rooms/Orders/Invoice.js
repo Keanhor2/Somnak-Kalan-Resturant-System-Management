@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.Invoice = void 0;
+exports.Invoice = exports.OrderType = void 0;
 var OrderType;
 (function (OrderType) {
     OrderType["TABLE"] = "tables";
@@ -15,9 +15,10 @@ var OrderType;
     OrderType["PRICE"] = "price";
     OrderType["ORDERID"] = "orderID";
     OrderType["NAME"] = "name";
-})(OrderType || (OrderType = {}));
+})(OrderType = exports.OrderType || (exports.OrderType = {}));
 var Invoice = /** @class */ (function () {
-    function Invoice() {
+    function Invoice(invoicesID) {
+        this.invoicesID = invoicesID;
         this.orders = [];
     }
     Invoice.prototype.addCustomerDone = function () {
@@ -58,39 +59,6 @@ var Invoice = /** @class */ (function () {
             + 'Foods: ' + foods + '\n'
             + 'Drinks: ' + drinks + '\n'
             + 'Total: ' + total;
-    };
-    Invoice.prototype.checkCustomerByTime = function (time) {
-        for (var _i = 0, _a = this.orders; _i < _a.length; _i++) {
-            var check = _a[_i];
-            if (check[OrderType.TIMES][OrderType.TIME] == time) {
-                return check;
-            }
-        }
-    };
-    Invoice.prototype.checkAmountOfCustomerByTimeAndTable = function (time, id) {
-        for (var _i = 0, _a = this.orders; _i < _a.length; _i++) {
-            var check = _a[_i];
-            if (check[OrderType.TIMES][OrderType.TIME] == time) {
-                if (check[OrderType.TABLE][OrderType.TABLEID] == id) {
-                    return check;
-                }
-                return 'This ' + time + ' time does not exist tableId: ' + id;
-            }
-        }
-    };
-    Invoice.prototype.checkFoodDrinkCustomerOrderByName = function (name) {
-        for (var _i = 0, _a = this.orders; _i < _a.length; _i++) {
-            var check = _a[_i];
-            if (check['customers'] === name) {
-                // for (let food of check['menuItems'][OrderType.FOOD]) {
-                //   return food
-                // }
-                // for (let drink of check['menuItems'][OrderType.DRINK]) {
-                //    return drink
-                // }
-                return check['menuItems'];
-            }
-        }
     };
     return Invoice;
 }());

@@ -13,11 +13,4 @@ export class MenuItem {
     addDrink(...drink:Drinks[]){
         this.drinks= this.drinks.concat(drink);
     }
-    getEnumDrink(){
-        return typeMenu.DRINKS;
-    }
-    getEnumFood(){
-        return typeMenu.FOOD;
-    }
-   
 }

@@ -25,12 +25,6 @@ var MenuItem = /** @class */ (function () {
         }
         this.drinks = this.drinks.concat(drink);
     };
-    MenuItem.prototype.getEnumDrink = function () {
-        return typeMenu.DRINKS;
-    };
-    MenuItem.prototype.getEnumFood = function () {
-        return typeMenu.FOOD;
-    };
     return MenuItem;
 }());
 exports.MenuItem = MenuItem;

@@ -1,11 +1,5 @@
 import { Tables } from "./tables/Tables";
-export enum typeNumber{
-  number1=1,
-  number2=2,
-  number3=3,
-  number4=4,
-  number5=5
-}
+
 export class Room {
   private tables: Tables[]=[];
   constructor(private id: number) {}

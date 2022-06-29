@@ -1,6 +1,5 @@
-import { Room } from "../rooms/Room";
 import { Customer } from "./Customers/Customers";
-import { Role, Staff } from "./staff/Staff";
+import { Staff } from "./staff/Staff";
 export class HumanManager {
   private customers:Customer[] = [];
   private staff:Staff[] = [];
