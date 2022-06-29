@@ -24,16 +24,6 @@ var Room = /** @class */ (function () {
     Room.prototype.getRoomId = function () {
         return this.id;
     };
-    Room.prototype.getCheckTable = function (num) {
-        var tables = [];
-        for (var _i = 0, _a = this.tables; _i < _a.length; _i++) {
-            var table = _a[_i];
-            if (table.getTableID() !== num) {
-                tables.push(table);
-            }
-        }
-        return tables;
-    };
     return Room;
 }());
 exports.Room = Room;

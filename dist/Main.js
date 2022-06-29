@@ -76,11 +76,13 @@ var beer = new Drinks_1.Drinks(1, EnumDrink_1.DrinkCategory.BEER, 200);
 var coke = new Drinks_1.Drinks(2, EnumDrink_1.DrinkCategory.COKE, 200);
 var string = new Drinks_1.Drinks(3, EnumDrink_1.DrinkCategory.STRING, 200);
 var winner = new Drinks_1.Drinks(4, EnumDrink_1.DrinkCategory.WINER, 2000);
-var menuItem = new MenuItem_1.MenuItem();
-menuItem.addFood(hamburgar);
-menuItem.addDrink(winner, beer);
+var menuItem1 = new MenuItem_1.MenuItem();
+var menuItem2 = new MenuItem_1.MenuItem();
+menuItem1.addFood(hamburgar);
+menuItem2.addDrink(winner, beer);
 //create date  time start and end Order ROOMS
 var start1 = new DateTime_1.DateTimes('Moanday', 'May', 2022, 10);
+var start2 = new DateTime_1.DateTimes('Moanday', 'May', 2022, 9);
 //create Tables and add to room
 var tables1 = new Tables_1.Tables(1);
 var tables2 = new Tables_1.Tables(2);
@@ -90,23 +92,8 @@ room1.addTableToRoom(tables1, tables2, tables3, tables4);
 /*
     add Table to Order
 */
-var order = new Orders_1.Orders(1);
-var order2 = new Orders_1.Orders(2);
-order.addTable(tables1);
-order.setTimes(start1);
-order2.addTable(tables2);
-order2.setTimes(start1);
-/*
-    add Customer to Order
-*/
-order.addCustomer(kea, somnak);
-order2.addCustomer(kea, somnak);
-/*
-    add MenuItem to Order
-*/
-order.addMenuItem(menuItem);
-order2.addMenuItem(menuItem);
+var order = new Orders_1.Orders(1, start1, tables1, menuItem1, kea);
 var invoice = new Invoice_1.Invoice();
-invoice.addCustomerDone(order, order2);
+invoice.addCustomerDone(order);
+console.log(invoice.getInvoicesBy(kea));
 //MAIN MENU
-console.log(invoice.getInvoices(1));

@@ -2,9 +2,9 @@
 exports.__esModule = true;
 exports.Foods = void 0;
 var Foods = /** @class */ (function () {
-    function Foods(foodId, food, price) {
+    function Foods(foodId, name, price) {
         this.foodId = foodId;
-        this.food = food;
+        this.name = name;
         this.price = price;
     }
     Foods.prototype.getFoodId = function () {

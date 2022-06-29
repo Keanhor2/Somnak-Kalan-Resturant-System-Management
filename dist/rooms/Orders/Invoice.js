@@ -1,6 +1,21 @@
 "use strict";
 exports.__esModule = true;
 exports.Invoice = void 0;
+var OrderType;
+(function (OrderType) {
+    OrderType["TABLE"] = "tables";
+    OrderType["TABLEID"] = "tableID";
+    OrderType["TIMES"] = "times";
+    OrderType["TIME"] = "time";
+    OrderType["DAY"] = "day";
+    OrderType["MONTH"] = "month";
+    OrderType["YEAR"] = "year";
+    OrderType["FOOD"] = "foods";
+    OrderType["DRINK"] = "drinks";
+    OrderType["PRICE"] = "price";
+    OrderType["ORDERID"] = "orderID";
+    OrderType["NAME"] = "name";
+})(OrderType || (OrderType = {}));
 var Invoice = /** @class */ (function () {
     function Invoice() {
         this.orders = [];
@@ -12,7 +27,7 @@ var Invoice = /** @class */ (function () {
         }
         this.orders = this.orders.concat(order);
     };
-    Invoice.prototype.getInvoices = function (num) {
+    Invoice.prototype.getInvoicesBy = function (name) {
         var date = '';
         var times = '';
         var orderIdAndTableId = '';
@@ -21,26 +36,52 @@ var Invoice = /** @class */ (function () {
         var total = 0;
         for (var _i = 0, _a = this.orders; _i < _a.length; _i++) {
             var invoice = _a[_i];
-            if (invoice['tables'][0]['tableID'] === num) {
-                date = invoice['times']['day'] + '-' + invoice['times']['month'] + '-' + invoice['times']['year'];
-                orderIdAndTableId = 'OrderId :' + invoice['orderID'] + '  ' + 'tableId :' + invoice['tables'][0]['tableID'];
-                times = "Eat In " + "  " + invoice['times']['time'] + " am";
-                for (var _b = 0, _c = invoice['menuItems']; _b < _c.length; _b++) {
-                    var item = _c[_b];
-                    for (var _d = 0, _e = item['foods']; _d < _e.length; _d++) {
-                        var food = _e[_d];
-                        foods += food['food'] + ' - ' + food['price'] + '\n';
-                        total += food['price'];
-                    }
-                    for (var _f = 0, _g = item['drinks']; _f < _g.length; _f++) {
-                        var drink = _g[_f];
-                        drinks += drink['name'] + ' - ' + drink['price'] + '\n';
-                        total += drink['price'];
-                    }
+            if (invoice['customers'] === name) {
+                date = invoice[OrderType.TIMES][OrderType.DAY] + '-' + invoice[OrderType.TIMES][OrderType.MONTH] + '-' + invoice[OrderType.TIMES][OrderType.YEAR];
+                orderIdAndTableId = 'OrderId :' + invoice[OrderType.ORDERID] + '  ' + 'tableId :' + invoice[OrderType.TABLE][OrderType.TABLEID];
+                times = "Eat In " + "  " + invoice[OrderType.TIMES][OrderType.TIME] + " am";
+                // for (let item of invoice['menuItems']) {
+                for (var _b = 0, _c = invoice['menuItems'][OrderType.FOOD]; _b < _c.length; _b++) {
+                    var food = _c[_b];
+                    foods += food[OrderType.NAME] + ' - ' + food[OrderType.PRICE] + '\n';
+                    total += food[OrderType.PRICE];
                 }
+                for (var _d = 0, _e = invoice['menuItems'][OrderType.DRINK]; _d < _e.length; _d++) {
+                    var drink = _e[_d];
+                    drinks += drink[OrderType.NAME] + ' - ' + drink[OrderType.PRICE] + '\n';
+                    total += drink[OrderType.PRICE];
+                }
+                // }
             }
         }
-        return date + '\n' + times + '\n' + orderIdAndTableId + '\n' + foods + '\n' + drinks + '\n' + total;
+        return 'Entry: ' + date + '\n'
+            + 'Date: ' + times + '\n'
+            + 'ORD-TBL: ' + orderIdAndTableId + '\n'
+            + 'Foods: ' + foods + '\n'
+            + 'Drinks: ' + drinks + '\n'
+            + 'Total: ' + total;
+    };
+    Invoice.prototype.checkCustomerByTime = function (time) {
+        for (var _i = 0, _a = this.orders; _i < _a.length; _i++) {
+            var check = _a[_i];
+            if (check[OrderType.TIMES][OrderType.TIME] == time) {
+                return check;
+            }
+        }
+    };
+    Invoice.prototype.checkAmountOfCustomerByTimeAndTable = function (time, id) {
+        for (var _i = 0, _a = this.orders; _i < _a.length; _i++) {
+            var check = _a[_i];
+            if (check[OrderType.TIMES][OrderType.TIME] == time) {
+                if (check[OrderType.TABLE][OrderType.TABLEID] == id) {
+                    return check;
+                }
+                return 'This ' + time + ' time does not exist tableId: ' + id;
+            }
+        }
+    };
+    Invoice.prototype.getInvoices = function () {
+        return this.orders;
     };
     return Invoice;
 }());
