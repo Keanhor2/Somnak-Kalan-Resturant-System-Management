@@ -3,5 +3,4 @@ export class Tables {
   getTableID(){
     return this.tableID;
   }
-
 }

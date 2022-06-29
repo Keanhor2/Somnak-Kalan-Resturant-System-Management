@@ -24,7 +24,4 @@ export  class Orders{
     getOrderID(){
         return this.orderID
     }
-    getAllTAbles(){
-        return this.tables;
-    }
 }

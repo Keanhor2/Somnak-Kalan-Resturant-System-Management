@@ -4,12 +4,6 @@ export enum typeMenu {
     FOOD='foods',
     DRINKS='drinks',
  }
-export enum typeNumber{
-    number1=1,
-    number2=2,
-    number3=3
-}
-
 export class MenuItem {
     private foods:Foods[]=[];
     private drinks:Drinks[]= [];
