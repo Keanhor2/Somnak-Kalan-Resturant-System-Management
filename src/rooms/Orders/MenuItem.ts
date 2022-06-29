@@ -1,5 +1,5 @@
-import { Drinks } from "../Kitchen/Drinks";
-import { Foods } from "../Kitchen/Food";
+import { Drinks } from "../stock/Drinks";
+import { Foods } from "../stock/Food";
 export enum typeMenu {
     FOOD='foods',
     DRINKS='drinks',

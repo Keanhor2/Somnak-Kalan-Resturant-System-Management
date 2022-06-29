@@ -32,7 +32,6 @@ export class Invoice {
                 date = invoice[OrderType.TIMES][OrderType.DAY] + '-' + invoice[OrderType.TIMES][OrderType.MONTH] + '-' + invoice[OrderType.TIMES][OrderType.YEAR];
                 orderIdAndTableId = 'OrderId :' + invoice[OrderType.ORDERID] + '  ' + 'tableId :' + invoice[OrderType.TABLE][OrderType.TABLEID];
                 times = "Eat In " + "  " + invoice[OrderType.TIMES][OrderType.TIME] + " am"
-                // for (let item of invoice['menuItems']) {
                     for (let food of invoice['menuItems'][OrderType.FOOD]) {
                         foods += food[OrderType.NAME] + ' - ' + food[OrderType.PRICE] + '\n'
                         total += food[OrderType.PRICE];
@@ -41,7 +40,6 @@ export class Invoice {
                         drinks += drink[OrderType.NAME] + ' - ' + drink[OrderType.PRICE] + '\n'
                         total += drink[OrderType.PRICE];
                     }
-                // }
             }
         }
         return 'Entry: ' + date + '\n'
@@ -68,8 +66,12 @@ export class Invoice {
             }
         }
     }
-    getInvoices(){
-        return this.orders
+    checkFoodDrinkCustomerOrderByName(name:Customer){
+        for(let check of this.orders){
+            if (check['customers'] === name) {
+                return check['menuItems']
+            }
+        }
     }
-
+    
 }

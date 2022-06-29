@@ -10,15 +10,15 @@ var Security_1 = require("./human/staff/Security");
 var Staff_1 = require("./human/staff/Staff");
 var Waiter_1 = require("./human/staff/Waiter");
 var Rataurant_1 = require("./Rataurant");
-var Drinks_1 = require("./rooms/Kitchen/Drinks");
-var EnumDrink_1 = require("./rooms/Kitchen/EnumDrink");
-var EnumFood_1 = require("./rooms/Kitchen/EnumFood");
-var Food_1 = require("./rooms/Kitchen/Food");
+var Drinks_1 = require("./rooms/stock/Drinks");
+var EnumDrink_1 = require("./rooms/stock/EnumDrink");
+var EnumFood_1 = require("./rooms/stock/EnumFood");
+var Food_1 = require("./rooms/stock/Food");
 var Invoice_1 = require("./rooms/Orders/Invoice");
 var MenuItem_1 = require("./rooms/Orders/MenuItem");
 var Orders_1 = require("./rooms/Orders/Orders");
-var Room_1 = require("./rooms/Room");
 var Tables_1 = require("./rooms/tables/Tables");
+var Room_1 = require("./rooms/Room");
 /*
     Room Management
 */
@@ -56,13 +56,7 @@ var kana = new Waiter_1.Waiter('Kana', 20, Staff_1.Role.WAITER, Person_1.Gender.
 var jock = new Waiter_1.Waiter('Jock', 20, Staff_1.Role.WAITER, Person_1.Gender.MALE);
 var sorey = new Waiter_1.Waiter('Sorey', 20, Staff_1.Role.WAITER, Person_1.Gender.FEMALE);
 var jonh = new Waiter_1.Waiter('Jonh', 20, Staff_1.Role.WAITER, Person_1.Gender.MALE);
-var chakrya = new Waiter_1.Waiter('Chakrya', 20, Staff_1.Role.WAITER, Person_1.Gender.FEMALE);
-var chet = new Waiter_1.Waiter('Chet', 20, Staff_1.Role.WAITER, Person_1.Gender.MALE);
-var jav = new Waiter_1.Waiter('Jav', 20, Staff_1.Role.WAITER, Person_1.Gender.MALE);
-var virak = new Waiter_1.Waiter('Virak', 20, Staff_1.Role.WAITER, Person_1.Gender.MALE);
-var son = new Waiter_1.Waiter('Son', 20, Staff_1.Role.WAITER, Person_1.Gender.FEMALE);
-var kan = new Waiter_1.Waiter('Kan', 20, Staff_1.Role.WAITER, Person_1.Gender.MALE);
-restaurant.hr.addStaff(kana, jock, sorey, jonh, chakrya, chet, jav, virak, son, kan);
+restaurant.hr.addStaff(kana, jock, sorey, jonh);
 /*
     food
 */
@@ -92,8 +86,8 @@ room1.addTableToRoom(tables1, tables2, tables3, tables4);
 /*
     add Table to Order
 */
-var order = new Orders_1.Orders(1, start1, tables1, menuItem1, kea);
+var order = new Orders_1.Orders(1, start1, tables1, menuItem1, kana, kea);
 var invoice = new Invoice_1.Invoice();
 invoice.addCustomerDone(order);
-console.log(invoice.getInvoicesBy(kea));
+console.log(invoice.checkFoodDrinkCustomerOrderByName(kea));
 //MAIN MENU

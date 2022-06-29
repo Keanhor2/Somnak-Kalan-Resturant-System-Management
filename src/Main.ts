@@ -9,16 +9,15 @@ import { Security } from "./human/staff/Security";
 import { Role } from "./human/staff/Staff";
 import { Waiter } from "./human/staff/Waiter";
 import { Restaurant } from "./Rataurant";
-import { Drinks } from "./rooms/Kitchen/Drinks";
-import { DrinkCategory } from "./rooms/Kitchen/EnumDrink";
-import { FoodCategory } from "./rooms/Kitchen/EnumFood";
-import { Foods } from "./rooms/Kitchen/Food";
-import { TableID } from "./rooms/Orders/Enum";
+import { Drinks } from "./rooms/stock/Drinks";
+import { DrinkCategory } from "./rooms/stock/EnumDrink";
+import { FoodCategory } from "./rooms/stock/EnumFood";
+import { Foods } from "./rooms/stock/Food";
 import { Invoice } from "./rooms/Orders/Invoice";
 import { MenuItem } from "./rooms/Orders/MenuItem";
 import { Orders } from "./rooms/Orders/Orders";
-import { Room, typeNumber } from "./rooms/Room";
 import { Tables } from "./rooms/tables/Tables";
+import { Room } from "./rooms/Room";
 /* 
     Room Management
 */
@@ -58,13 +57,7 @@ let kana = new Waiter('Kana',20,Role.WAITER,Gender.FEMALE);
 let jock = new Waiter('Jock',20,Role.WAITER,Gender.MALE);
 let sorey = new Waiter('Sorey',20,Role.WAITER,Gender.FEMALE);
 let jonh = new Waiter('Jonh',20,Role.WAITER,Gender.MALE);
-let chakrya = new Waiter('Chakrya',20,Role.WAITER,Gender.FEMALE);
-let chet = new Waiter('Chet',20,Role.WAITER,Gender.MALE);
-let jav = new Waiter('Jav',20,Role.WAITER,Gender.MALE);
-let virak = new Waiter('Virak',20,Role.WAITER,Gender.MALE);
-let son = new Waiter('Son',20,Role.WAITER,Gender.FEMALE);
-let kan = new Waiter('Kan',20,Role.WAITER,Gender.MALE);
-restaurant.hr.addStaff(kana,jock,sorey,jonh,chakrya,chet,jav,virak,son,kan);
+restaurant.hr.addStaff(kana,jock,sorey,jonh);
 /* 
     food
 */
@@ -94,13 +87,13 @@ room1.addTableToRoom(tables1,tables2,tables3,tables4);
 /* 
     add Table to Order 
 */
-let order = new Orders(1,start1,tables1,menuItem1,kea)
+let order = new Orders(1,start1,tables1,menuItem1,kana,kea)
 
 
 
 let invoice = new Invoice()
 invoice.addCustomerDone(order)
-console.log(invoice.getInvoicesBy(kea));
+console.log(invoice.checkFoodDrinkCustomerOrderByName(kea));
 //MAIN MENU
 
 

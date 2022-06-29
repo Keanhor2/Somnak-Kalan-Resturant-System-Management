@@ -40,7 +40,6 @@ var Invoice = /** @class */ (function () {
                 date = invoice[OrderType.TIMES][OrderType.DAY] + '-' + invoice[OrderType.TIMES][OrderType.MONTH] + '-' + invoice[OrderType.TIMES][OrderType.YEAR];
                 orderIdAndTableId = 'OrderId :' + invoice[OrderType.ORDERID] + '  ' + 'tableId :' + invoice[OrderType.TABLE][OrderType.TABLEID];
                 times = "Eat In " + "  " + invoice[OrderType.TIMES][OrderType.TIME] + " am";
-                // for (let item of invoice['menuItems']) {
                 for (var _b = 0, _c = invoice['menuItems'][OrderType.FOOD]; _b < _c.length; _b++) {
                     var food = _c[_b];
                     foods += food[OrderType.NAME] + ' - ' + food[OrderType.PRICE] + '\n';
@@ -51,7 +50,6 @@ var Invoice = /** @class */ (function () {
                     drinks += drink[OrderType.NAME] + ' - ' + drink[OrderType.PRICE] + '\n';
                     total += drink[OrderType.PRICE];
                 }
-                // }
             }
         }
         return 'Entry: ' + date + '\n'
@@ -80,8 +78,19 @@ var Invoice = /** @class */ (function () {
             }
         }
     };
-    Invoice.prototype.getInvoices = function () {
-        return this.orders;
+    Invoice.prototype.checkFoodDrinkCustomerOrderByName = function (name) {
+        for (var _i = 0, _a = this.orders; _i < _a.length; _i++) {
+            var check = _a[_i];
+            if (check['customers'] === name) {
+                // for (let food of check['menuItems'][OrderType.FOOD]) {
+                //   return food
+                // }
+                // for (let drink of check['menuItems'][OrderType.DRINK]) {
+                //    return drink
+                // }
+                return check['menuItems'];
+            }
+        }
     };
     return Invoice;
 }());
