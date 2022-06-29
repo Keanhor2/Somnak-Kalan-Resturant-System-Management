@@ -14,6 +14,7 @@ var Drinks_1 = require("./rooms/Kitchen/Drinks");
 var EnumDrink_1 = require("./rooms/Kitchen/EnumDrink");
 var EnumFood_1 = require("./rooms/Kitchen/EnumFood");
 var Food_1 = require("./rooms/Kitchen/Food");
+var Invoice_1 = require("./rooms/Orders/Invoice");
 var MenuItem_1 = require("./rooms/Orders/MenuItem");
 var Orders_1 = require("./rooms/Orders/Orders");
 var Room_1 = require("./rooms/Room");
@@ -26,9 +27,6 @@ var room1 = new Room_1.Room(1);
 //Add room to Restaurant
 var restaurant = new Rataurant_1.Restaurant('PNC Restuarant', 'Phnom Penh');
 restaurant.rooms.addRoom(room1);
-//create Tables and add to room
-var tables = new Tables_1.Tables(1);
-room1.addTable(tables);
 // create customer and add to room and CustomerOrder room
 var kea = new Customers_1.Customer('kea', 20, Person_1.Gender.MALE, '123456');
 var somnak = new Customers_1.Customer('somnak', 19, Person_1.Gender.MALE, '345678');
@@ -65,8 +63,6 @@ var virak = new Waiter_1.Waiter('Virak', 20, Staff_1.Role.WAITER, Person_1.Gende
 var son = new Waiter_1.Waiter('Son', 20, Staff_1.Role.WAITER, Person_1.Gender.FEMALE);
 var kan = new Waiter_1.Waiter('Kan', 20, Staff_1.Role.WAITER, Person_1.Gender.MALE);
 restaurant.hr.addStaff(kana, jock, sorey, jonh, chakrya, chet, jav, virak, son, kan);
-//create date  time start and end Order ROOMS
-var start1 = new DateTime_1.DateTimes('Moanday', 'May', 2022, 10);
 /*
     food
 */
@@ -83,19 +79,34 @@ var winner = new Drinks_1.Drinks(4, EnumDrink_1.DrinkCategory.WINER, 2000);
 var menuItem = new MenuItem_1.MenuItem();
 menuItem.addFood(hamburgar);
 menuItem.addDrink(winner, beer);
+//create date  time start and end Order ROOMS
+var start1 = new DateTime_1.DateTimes('Moanday', 'May', 2022, 10);
+//create Tables and add to room
+var tables1 = new Tables_1.Tables(1);
+var tables2 = new Tables_1.Tables(2);
+var tables3 = new Tables_1.Tables(3);
+var tables4 = new Tables_1.Tables(4);
+room1.addTableToRoom(tables1, tables2, tables3, tables4);
 /*
     add Table to Order
 */
 var order = new Orders_1.Orders(1);
-order.addTable(tables);
+var order2 = new Orders_1.Orders(2);
+order.addTable(tables1);
 order.setTimes(start1);
+order2.addTable(tables2);
+order2.setTimes(start1);
 /*
     add Customer to Order
 */
 order.addCustomer(kea, somnak);
+order2.addCustomer(kea, somnak);
 /*
     add MenuItem to Order
 */
 order.addMenuItem(menuItem);
+order2.addMenuItem(menuItem);
+var invoice = new Invoice_1.Invoice();
+invoice.addCustomerDone(order, order2);
 //MAIN MENU
-console.log(order);
+console.log(invoice.getInvoices(1));

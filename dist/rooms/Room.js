@@ -1,12 +1,20 @@
 "use strict";
 exports.__esModule = true;
-exports.Room = void 0;
+exports.Room = exports.typeNumber = void 0;
+var typeNumber;
+(function (typeNumber) {
+    typeNumber[typeNumber["number1"] = 1] = "number1";
+    typeNumber[typeNumber["number2"] = 2] = "number2";
+    typeNumber[typeNumber["number3"] = 3] = "number3";
+    typeNumber[typeNumber["number4"] = 4] = "number4";
+    typeNumber[typeNumber["number5"] = 5] = "number5";
+})(typeNumber = exports.typeNumber || (exports.typeNumber = {}));
 var Room = /** @class */ (function () {
     function Room(id) {
         this.id = id;
         this.tables = [];
     }
-    Room.prototype.addTable = function () {
+    Room.prototype.addTableToRoom = function () {
         var table = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             table[_i] = arguments[_i];
@@ -16,8 +24,15 @@ var Room = /** @class */ (function () {
     Room.prototype.getRoomId = function () {
         return this.id;
     };
-    Room.prototype.getTable = function () {
-        return this.tables;
+    Room.prototype.getCheckTable = function (num) {
+        var tables = [];
+        for (var _i = 0, _a = this.tables; _i < _a.length; _i++) {
+            var table = _a[_i];
+            if (table.getTableID() !== num) {
+                tables.push(table);
+            }
+        }
+        return tables;
     };
     return Room;
 }());

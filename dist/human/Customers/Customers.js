@@ -20,13 +20,18 @@ var Person_1 = require("../Person");
 var Customer = /** @class */ (function (_super) {
     __extends(Customer, _super);
     function Customer(name, age, gender, phone) {
-        return _super.call(this, name, age, gender, phone) || this;
+        var _this = _super.call(this, name, age, gender, phone) || this;
+        _this.order = [];
+        return _this;
     }
     Customer.prototype.isTheName = function () {
         return this.name;
     };
     Customer.prototype.getCustomer = function () {
         return this.name;
+    };
+    Customer.prototype.addOrder = function (orders) {
+        this.order = this.order.concat(orders);
     };
     return Customer;
 }(Person_1.Person));

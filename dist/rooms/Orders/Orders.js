@@ -35,9 +35,6 @@ var Orders = /** @class */ (function () {
     Orders.prototype.getOrderID = function () {
         return this.orderID;
     };
-    Orders.prototype.getAllTAbles = function () {
-        return this.tables;
-    };
     return Orders;
 }());
 exports.Orders = Orders;

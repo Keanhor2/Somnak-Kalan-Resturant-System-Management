@@ -1,17 +1,11 @@
 "use strict";
 exports.__esModule = true;
-exports.MenuItem = exports.typeNumber = exports.typeMenu = void 0;
+exports.MenuItem = exports.typeMenu = void 0;
 var typeMenu;
 (function (typeMenu) {
     typeMenu["FOOD"] = "foods";
     typeMenu["DRINKS"] = "drinks";
 })(typeMenu = exports.typeMenu || (exports.typeMenu = {}));
-var typeNumber;
-(function (typeNumber) {
-    typeNumber[typeNumber["number1"] = 1] = "number1";
-    typeNumber[typeNumber["number2"] = 2] = "number2";
-    typeNumber[typeNumber["number3"] = 3] = "number3";
-})(typeNumber = exports.typeNumber || (exports.typeNumber = {}));
 var MenuItem = /** @class */ (function () {
     function MenuItem() {
         this.foods = [];
