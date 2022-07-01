@@ -35,13 +35,23 @@ var HumanManager = /** @class */ (function () {
     /*
     *All spend in a Month for staff members
     */
-    HumanManager.prototype.getRestaurantsSpeedInMonth = function () {
+    HumanManager.prototype.getRestaurantsSpendInMonth = function () {
         var result = 0;
         for (var _i = 0, _a = this.staff; _i < _a.length; _i++) {
             var amount = _a[_i];
             result += amount['salary'];
         }
         return result;
+    };
+    HumanManager.prototype.listRolesOfStaff = function (staffRole) {
+        var displayRole = [];
+        for (var _i = 0, _a = this.staff; _i < _a.length; _i++) {
+            var role = _a[_i];
+            if (role.getCategory() === staffRole) {
+                displayRole.push(role);
+            }
+        }
+        return displayRole;
     };
     return HumanManager;
 }());

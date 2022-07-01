@@ -122,7 +122,7 @@ room1.addTableToRoom(tables1, tables2, tables3, tables4);
     add Table to Order
 */
 var order = new Orders_1.Orders(1, start1, tables1, menuItem1, chanSok, kea);
-var order3 = new Orders_1.Orders(2, start2, tables2, menuItem2, Koev, kea);
+var order3 = new Orders_1.Orders(2, start1, tables2, menuItem2, Koev, kea);
 var order2 = new Orders_1.Orders(2, start2, tables2, menuItem2, Koev, somnak);
 var order4 = new Orders_1.Orders(2, start2, tables2, menuItem2, sorey, somnak);
 /*
@@ -139,7 +139,7 @@ invoice2.addCustomerDone(order2, order4);
     Create payment
 */
 var payment1 = new Payment_1.Payment(kea, tables1, false);
-var payment2 = new Payment_1.Payment(somnak, tables1, true);
+var payment2 = new Payment_1.Payment(somnak, tables2, true);
 /*
   addInvoice
 */
@@ -154,22 +154,58 @@ var checkPayment = new CheckPayment_1.CheckPayment();
 */
 checkPayment.addPayment(payment1, payment2);
 //MAIN MENU
+/*     STUDENT 1    */
 /*
- get all Staff in Restaurant
-*/
-// console.log(restaurant.hr.countAllStaffInRestaurants());
-/*
- List Staff
+ @List Staff
 */
 // console.log(restaurant.hr.getStaff());
 /*
- Get all Payment for staff in Month of restaurant
+ /*
+  @get all Staff in Restaurant
 */
-// console.log(restaurant.hr.getRestaurantsSpeedInMonth());
+//   console.log(restaurant.hr.countAllStaffInRestaurants());
 /*
- Get invoice by put name of user
+  @Get all Payment for staff in Month of restaurant
+*/
+// console.log(restaurant.hr.getRestaurantsSpendInMonth());
+/*
+  @listRolesOfStaff
+*/
+// console.log(restaurant.hr.listRolesOfStaff(Role.ACCOUNTANT));
+// -------------------STUDENT  2----------------
+/*
+ @Invoice
+ getInvoicesBy() by name
 */
 // console.log(invoice1.getInvoicesBy(kea));
-/* check
+/*
+ Customer is Pay or Not Pay
+ isPayAlready()
+ @customer @id of table
+*/
+//Note Pay
+// payment1.isPayAlready(kea,tables1)
+//Pay
+// payment2.isPayAlready(somnak,tables2)
+/*
+  checkListCustomerHasPayAndNotPay
+  @isPay, input True or False
+*/
+// console.log(checkPayment.checkListCustomerHasPayAndNotPay(true));
+// console.log(checkPayment.checkListCustomerHasPayAndNotPay(false));
+/*
+  checkCustomerByTime
+  @time
+*/
+// console.log(checkPayment.checkCustomerByTime(9));
+/*
+checkAmountOfCustomerByTimeAndTable
+@time
+@id of table
+*/
+// console.log(checkPayment.checkAmountOfCustomerByTimeAndTable(9,1));
+/*
+checkFoodDrinkCustomerOrderByName
+@Customer
 */
 console.log(checkPayment.checkFoodDrinkCustomerOrderByName(kea));

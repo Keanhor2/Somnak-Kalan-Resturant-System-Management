@@ -22,6 +22,7 @@ var CheckPayment = /** @class */ (function () {
         }
     };
     CheckPayment.prototype.checkCustomerByTime = function (time) {
+        var customers = [];
         for (var _i = 0, _a = this.payments; _i < _a.length; _i++) {
             var list = _a[_i];
             for (var _b = 0, _c = list['invoices']; _b < _c.length; _b++) {
@@ -29,11 +30,12 @@ var CheckPayment = /** @class */ (function () {
                 for (var _d = 0, _e = order['orders']; _d < _e.length; _d++) {
                     var times = _e[_d];
                     if (time === times[Invoice_1.OrderType.TIMES][Invoice_1.OrderType.TIME]) {
-                        return times['customers'];
+                        customers.push(times['customers']);
                     }
                 }
             }
         }
+        return customers;
     };
     CheckPayment.prototype.checkAmountOfCustomerByTimeAndTable = function (time, id) {
         for (var _i = 0, _a = this.payments; _i < _a.length; _i++) {

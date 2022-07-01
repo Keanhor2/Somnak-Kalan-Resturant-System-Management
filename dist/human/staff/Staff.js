@@ -39,7 +39,7 @@ var Salary;
 var Staff = /** @class */ (function (_super) {
     __extends(Staff, _super);
     function Staff(name, age, category, gender, salary, phone) {
-        var _this = _super.call(this, name, age, gender, phone) || this;
+        var _this = _super.call(this, name, age, gender) || this;
         _this.name = name;
         _this.age = age;
         _this.category = category;
@@ -48,8 +48,8 @@ var Staff = /** @class */ (function (_super) {
         _this.phone = phone;
         return _this;
     }
-    Staff.prototype.getChef = function () {
-        return Role.CHEF;
+    Staff.prototype.getCategory = function () {
+        return this.category;
     };
     return Staff;
 }(Person_1.Person));

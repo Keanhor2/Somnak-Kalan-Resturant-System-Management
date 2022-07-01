@@ -27,6 +27,7 @@ import { CheckPayment } from "./rooms/Orders/CheckPayment";
 /* 
     Create Restaurant 
 */
+
 let restaurant = new Restaurant('PNC Restuarant','Phnom Penh');
 /* 
     Create room
@@ -123,7 +124,7 @@ room1.addTableToRoom(tables1,tables2,tables3,tables4);
     add Table to Order 
 */
 let order = new Orders(1,start1,tables1,menuItem1,chanSok,kea)
-let order3 = new Orders(2,start2,tables2,menuItem2,Koev,kea)
+let order3 = new Orders(2,start1,tables2,menuItem2,Koev,kea)
 let order2 = new Orders(2,start2,tables2,menuItem2,Koev,somnak)
 let order4 = new Orders(2,start2,tables2,menuItem2,sorey,somnak)
 /* 
@@ -140,7 +141,7 @@ invoice2.addCustomerDone(order2,order4)
     Create payment 
 */
 let payment1 = new Payment(kea,tables1,false)
-let payment2 = new Payment(somnak,tables1,true)
+let payment2 = new Payment(somnak,tables2,true)
 /* 
   addInvoice 
 */
@@ -155,36 +156,71 @@ let checkPayment = new CheckPayment();
 */
 checkPayment.addPayment(payment1,payment2)
 //MAIN MENU
- /* 
-  get all Staff in Restaurant
-*/
-// console.log(restaurant.hr.countAllStaffInRestaurants());
- /* 
-  List Staff
+/*     STUDENT 1    */
+/* 
+ @List Staff
 */
 // console.log(restaurant.hr.getStaff());
+
+/* 
  /* 
-  Get all Payment for staff in Month of restaurant
+  @get all Staff in Restaurant
 */
-// console.log(restaurant.hr.getRestaurantsSpeedInMonth());
+//   console.log(restaurant.hr.countAllStaffInRestaurants());
+/*
+  @Get all Payment for staff in Month of restaurant
+*/
+// console.log(restaurant.hr.getRestaurantsSpendInMonth());
+/*
+  @listRolesOfStaff
+*/
+// console.log(restaurant.hr.listRolesOfStaff(Role.ACCOUNTANT));
+
+
+// -------------------STUDENT  2----------------
 
  /* 
-  Get invoice by put name of user 
+  @Invoice
+  getInvoicesBy() by name
 */
 // console.log(invoice1.getInvoicesBy(kea));
 
  /*
-  check cutomer by time
+  Customer is Pay or Not Pay
+  isPayAlready()
+  @customer @id of table
 */
-console.log(checkPayment.checkCustomerByTime(9));
+//Note Pay
+// payment1.isPayAlready(kea,tables1)
+//Pay
+// payment2.isPayAlready(somnak,tables2)
+
+
 /*
-  checkAmountOfCustomerByTimeAndTable by time and table id
+  checkListCustomerHasPayAndNotPay
+  @isPay, input True or False
 */
-console.log(checkPayment.checkAmountOfCustomerByTimeAndTable(10,1));
+// console.log(checkPayment.checkListCustomerHasPayAndNotPay(true));
+// console.log(checkPayment.checkListCustomerHasPayAndNotPay(false));
 /*
-  checkFoodDrinkCustomerOrderByName it will list all food and drink orders by customer 
+  checkCustomerByTime
+  @time
 */
-console.log(checkPayment.checkFoodDrinkCustomerOrderByName(kea));
+// console.log(checkPayment.checkCustomerByTime(9));
+
+/* 
+checkAmountOfCustomerByTimeAndTable
+@time
+@id of table
+*/
+// console.log(checkPayment.checkAmountOfCustomerByTimeAndTable(9,1));
+
+/* 
+checkFoodDrinkCustomerOrderByName
+@Customer
+*/
+// console.log(checkPayment.checkFoodDrinkCustomerOrderByName(kea));
+
 
 
 

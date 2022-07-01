@@ -25,8 +25,6 @@ var Waiter = /** @class */ (function (_super) {
     function Waiter(name, age, category, gender) {
         return _super.call(this, name, age, category, gender, Staff_1.Salary.WAITER_SALARY) || this;
     }
-    Waiter.prototype.getFoodCustomersOrder = function () {
-    };
     return Waiter;
 }(Staff_1.Staff));
 exports.Waiter = Waiter;

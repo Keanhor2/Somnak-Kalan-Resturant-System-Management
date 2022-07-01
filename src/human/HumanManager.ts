@@ -1,5 +1,5 @@
 import { Customer } from "./Customers/Customers";
-import { Staff } from "./staff/Staff";
+import { Role, Staff } from "./staff/Staff";
 export class HumanManager {
   private customers:Customer[] = [];
   private staff:Staff[] = [];
@@ -24,12 +24,21 @@ export class HumanManager {
   /*
   *All spend in a Month for staff members
   */
-  getRestaurantsSpeedInMonth(){
+  getRestaurantsSpendInMonth(){
     let result:number=0;
     for(let amount of this.staff){
       result+=amount['salary'];
     }
     return result;
+  }
+  listRolesOfStaff(staffRole:Role):Staff[]{
+    let displayRole:Staff[] = []
+    for(let role of this.staff){
+      if(role.getCategory() === staffRole ){
+        displayRole.push(role);
+      }
+    }
+    return displayRole;
   }
 }
 

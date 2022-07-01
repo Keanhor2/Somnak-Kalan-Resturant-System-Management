@@ -22,9 +22,6 @@ var Accountant = /** @class */ (function (_super) {
     function Accountant(name, age, category, gender) {
         return _super.call(this, name, age, category, gender, Staff_1.Salary.ACCOUNTANT_SALARY) || this;
     }
-    // customers pay for a food
-    Accountant.prototype.getCustomerPayment = function () {
-    };
     return Accountant;
 }(Staff_1.Staff));
 exports.Accountant = Accountant;

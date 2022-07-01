@@ -16,15 +16,17 @@ export class CheckPayment{
         }
     }
     checkCustomerByTime(time: number){
+        let customers: Customer[]= []
         for(let list of this.payments){
             for(let order of list['invoices']){
                 for(let times of  order['orders']){
                     if(time === times[OrderType.TIMES][OrderType.TIME]){
-                        return times['customers']
+                        customers.push( times['customers'])
                     }
                 }
             }
         }
+        return customers
     }
     checkAmountOfCustomerByTimeAndTable(time: number, id: TableID) {
         for(let list of this.payments){

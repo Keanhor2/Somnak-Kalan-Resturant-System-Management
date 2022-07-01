@@ -1,20 +1,20 @@
 import { Gender, Person } from "../Person";
 
 export enum Role {
-  CHEF='CHEF',
-  WAITER='WAITER',
-  SECURITY='SECURITY',
-  MANAGER='MANAGER',
-  ACCOUNTANT='ACCOUNTANT',
+  CHEF = 'CHEF',
+  WAITER = 'WAITER',
+  SECURITY = 'SECURITY',
+  MANAGER = 'MANAGER',
+  ACCOUNTANT = 'ACCOUNTANT',
 }
 
 export enum Salary {
-  CHEIF_SALARY=700,
-  ACCOUNTANT_SALARY =800,
-  SECURITY_SALARY=500,
-  WAITER_SALARY=300,
-  MANAGER_SALARY=1000
-  
+  CHEIF_SALARY = 700,
+  ACCOUNTANT_SALARY = 800,
+  SECURITY_SALARY = 500,
+  WAITER_SALARY = 300,
+  MANAGER_SALARY = 1000
+
 }
 
 /**
@@ -29,11 +29,10 @@ export class Staff extends Person {
     protected salary: Salary,
     protected phone?: string,
   ) {
-    super(name, age, gender,phone);
+    super(name, age, gender);
   }
-  getChef(){
-    return Role.CHEF
+  getCategory(): Role {
+    return this.category
   }
- 
 
 }

@@ -4,7 +4,5 @@ export class RoomsManager {
   addRoom(room: Room) {
     this.rooms = room;
   }
-  getRoom(){
-    return this.rooms
-  }
+
 }

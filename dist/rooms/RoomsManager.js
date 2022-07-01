@@ -7,9 +7,6 @@ var RoomsManager = /** @class */ (function () {
     RoomsManager.prototype.addRoom = function (room) {
         this.rooms = room;
     };
-    RoomsManager.prototype.getRoom = function () {
-        return this.rooms;
-    };
     return RoomsManager;
 }());
 exports.RoomsManager = RoomsManager;
